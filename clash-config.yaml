@@ -1,0 +1,26 @@
+proxies:
+  - name: vless-vision-reality
+    type: vless
+    server: 95.181.190.225
+    port: 443
+    uuid: b13fa139-4038-45b2-b2e8-730127424afe
+    network: tcp
+    tls: true
+    udp: true
+    client-fingerprint: chrome
+    servername: b13fa139.com
+    reality-opts:
+      public-key: W9BjX6YmCIVsjhKMlz233Yoe0xcf0SVHfvPKqbf3vCg
+      short-id: ""
+      spider-x: /
+    flow: xtls-rprx-vision
+
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies:
+      - vless-vision-reality
+      - DIRECT
+
+rules:
+  - MATCH,Proxy
