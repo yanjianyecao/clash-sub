@@ -1,26 +1,70 @@
 proxies:
-  - name: vless-vision-reality
+  - name: "美国01"
     type: vless
-    server: 95.181.190.225
-    port: 443
-    uuid: b13fa139-4038-45b2-b2e8-730127424afe
+    server: jiangniao.jiangniao44.top
+    port: 49545
+    uuid: 8f7953fa-5ed6-4690-aaf1-f0c3da17d7a0
     network: tcp
     tls: true
-    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
     client-fingerprint: chrome
-    servername: b13fa139.com
     reality-opts:
-      public-key: W9BjX6YmCIVsjhKMlz233Yoe0xcf0SVHfvPKqbf3vCg
-      short-id: ""
-      spider-x: /
-    flow: xtls-rprx-vision
+      public-key: 4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM
+      short-id: "5247b7"
 
+  - name: "日本01"
+    type: vless
+    server: jiang1314.jiangniao44.top
+    port: 32786
+    uuid: 54e6dcc1-9e32-4147-81a0-6e70069a41ba
+    network: tcp
+    tls: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw
+      short-id: "ec2c02bced"
+
+  - name: "新加坡01"
+    type: vless
+    server: sg01.jiangniao44.top
+    port: 10719
+    uuid: 93803b2d-661b-4442-be31-03eaa6f51fc1
+    network: tcp
+    tls: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk
+      short-id: "617f75a2"
+  
+  - name: "香港01"
+    type: vless
+    server: niao.jiangniao44.top
+    port: 56079
+    uuid: d2e6f717-0cdf-44f5-81e1-ad7f969ed903
+    network: tcp
+    tls: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI
+      short-id: "8332"
+    
 proxy-groups:
-  - name: Proxy
+  - name: "Proxy"
     type: select
     proxies:
-      - vless-vision-reality
-      - DIRECT
+      - "美国01"
+      - "日本01"
+      - "新加坡01"
+      - "香港01"
+      
 
 rules:
+  - GEOIP,CN,DIRECT
   - MATCH,Proxy
