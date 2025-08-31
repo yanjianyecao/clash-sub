@@ -1,3 +1,64 @@
+mixed-port: 7890
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: 127.0.0.1:9090
+
+dns:
+  enable: true
+  ipv6: false
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+
+  # 系统用来做初始解析（Bootstrap），必须是可直连、快的国内DNS
+  default-nameserver:
+    - 223.5.5.5       # 阿里
+    - 119.29.29.29    # 腾讯
+
+  # 主上游：默认用于绝大多数直连/国内解析
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+
+  # 备用上游：用于海外域名或主上游失效时；使用加密DNS抗污染
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+
+  # 自动判断哪些走 fallback（海外）：
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    # 避免把保留地址当作海外
+    ip-cidr:
+      - 240.0.0.0/4
+
+  # 按域集合指定解析器（Clash Meta 支持）
+  nameserver-policy:
+    "geosite:cn": [223.5.5.5, 119.29.29.29]
+    "geosite:geolocation-!cn": ["https://1.1.1.1/dns-query", "https://8.8.8.8/dns-query"]
+
+  # 这些域名不使用 fake-ip，返回真实IP，避免局域网/系统检测异常
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "localhost"
+    - "connectivitycheck.gstatic.com"
+    - "msftconnecttest.com"
+    - "msftncsi.com"
+    - "time.windows.com"
+    - "time.apple.com"
+    - "pool.ntp.org"
+    - "ntp.ntsc.ac.cn"
+    - "router.asus.com"
+    - "miwifi.com"
+    - "dns.alidns.com"
+    - "resolver1.opendns.com"
+    - "stun.l.google.com"
+    - "download.windowsupdate.com"
+
 proxies:
   - name: "美国01"
     type: vless
@@ -6,7 +67,7 @@ proxies:
     uuid: 8f7953fa-5ed6-4690-aaf1-f0c3da17d7a0
     network: tcp
     tls: true
-    flow: "xtls-rprx-vision-udp443"
+    flow: xtls-rprx-vision-udp443
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
@@ -20,7 +81,7 @@ proxies:
     uuid: 54e6dcc1-9e32-4147-81a0-6e70069a41ba
     network: tcp
     tls: true
-    flow: "xtls-rprx-vision-udp443"
+    flow: xtls-rprx-vision-udp443
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
@@ -34,7 +95,7 @@ proxies:
     uuid: 93803b2d-661b-4442-be31-03eaa6f51fc1
     network: tcp
     tls: true
-    flow: "xtls-rprx-vision-udp443"
+    flow: xtls-rprx-vision-udp443
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
@@ -48,23 +109,117 @@ proxies:
     uuid: d2e6f717-0cdf-44f5-81e1-ad7f969ed903
     network: tcp
     tls: true
-    flow: "xtls-rprx-vision-udp443"
+    flow: xtls-rprx-vision-udp443
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
       public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI
       short-id: "8332"
-    
+
+  - name: "美国02"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 32313
+    uuid: 741278f0-e49c-4aa3-9f00-7933987534f0
+    network: tcp
+    flow: xtls-rprx-vision-udp443
+    udp: true
+    tls: true
+    reality-opts:
+      public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI
+      short-id: 954ae509e86e10
+      spider-x: /
+    client-fingerprint: chrome
+    servername: yahoo.com
+
 proxy-groups:
+  # 手动选择
   - name: "Proxy"
     type: select
+    proxies:
+      - "Auto"
+      - "美国01"
+      - "日本01"
+      - "新加坡01"
+      - "香港01"
+      - "美国02"
+      - DIRECT
+
+  # 自动测速，定期选择延迟最低的节点
+  - name: "Auto"
+    type: url-test
     proxies:
       - "美国01"
       - "日本01"
       - "新加坡01"
       - "香港01"
-      
+      - "美国02"
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+  # 故障转移：某节点不可用时自动切下一个
+  - name: "Fallback"
+    type: fallback
+    proxies:
+      - "美国01"
+      - "日本01"
+      - "新加坡01"
+      - "香港01"
+      - "美国02"
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+
+  - name: "Telegram"
+    type: select
+    proxies:
+      - "Proxy"
+      - "Auto"
+      - "Fallback"
+      - DIRECT
+
+  - name: "YouTube"
+    type: select
+    proxies:
+      - "Proxy"
+      - "Auto"
+      - "Fallback"
+      - DIRECT
+
+  - name: "Netflix"
+    type: select
+    proxies:
+      - "Proxy"
+      - "Auto"
+      - "Fallback"
+      - DIRECT
+
+  - name: "Default"
+    type: select
+    proxies:
+      - "Proxy"
+      - "Auto"
+      - "Fallback"
+      - DIRECT
 
 rules:
+  # 局域网直连
+  - DOMAIN-SUFFIX,local,DIRECT
+  - DOMAIN-SUFFIX,lan,DIRECT
+
+  # 国内域名直连（需要 Clash Meta 内置 geosite）
+  - GEOSITE,CN,DIRECT
+  # 国内IP直连
   - GEOIP,CN,DIRECT
-  - MATCH,Proxy
+
+  # Telegram 走代理
+  - GEOSITE,telegram,Telegram
+
+  # YouTube 走代理
+  - GEOSITE,youtube,YouTube
+
+  # Netflix 走代理
+  - GEOSITE,netflix,Netflix
+
+  # 其他全部按默认策略
+  - MATCH,Default
