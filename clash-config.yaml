@@ -58,7 +58,6 @@ dns:
     - "resolver1.opendns.com"
     - "stun.l.google.com"
     - "download.windowsupdate.com"
-    
 
 proxies:
   - name: "美国01"
@@ -68,7 +67,8 @@ proxies:
     uuid: 8f7953fa-5ed6-4690-aaf1-f0c3da17d7a0
     network: tcp
     tls: true
-    flow: xtls-rprx-vision-udp443
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
@@ -81,16 +81,16 @@ proxies:
     port: 32313
     uuid: 741278f0-e49c-4aa3-9f00-7933987534f0
     network: tcp
-    flow: xtls-rprx-vision-udp443
-    udp: true
     tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
     reality-opts:
       public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI
       short-id: 954ae509e86e10
       spider-x: /
-    client-fingerprint: chrome
-    servername: yahoo.com
-    
+
   - name: "日本01"
     type: vless
     server: jiang1314.jiangniao44.top
@@ -98,7 +98,8 @@ proxies:
     uuid: 54e6dcc1-9e32-4147-81a0-6e70069a41ba
     network: tcp
     tls: true
-    flow: xtls-rprx-vision-udp443
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
@@ -112,13 +113,14 @@ proxies:
     uuid: 93803b2d-661b-4442-be31-03eaa6f51fc1
     network: tcp
     tls: true
-    flow: xtls-rprx-vision-udp443
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
       public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk
       short-id: "617f75a2"
-  
+
   - name: "香港01"
     type: vless
     server: niao.jiangniao44.top
@@ -126,34 +128,37 @@ proxies:
     uuid: d2e6f717-0cdf-44f5-81e1-ad7f969ed903
     network: tcp
     tls: true
-    flow: xtls-rprx-vision-udp443
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
       public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI
       short-id: "8332"
 
-- name: "土耳其01"
+  - name: "土耳其01"
     type: vless
     server: jiang.jiangniao.de
     port: 27519
     uuid: 34c19ca4-2f3d-45e0-aa58-24846d80a7fe
     network: tcp
     tls: true
+    udp: true
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
       public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM
-      short-id: 7388efc99b645c49
+      short-id: "7388efc99b645c49"
 
- - name: "墨西哥01"
+  - name: "墨西哥01"
     type: vless
     server: jiang.jiangniao.de
     port: 28841
     uuid: 2bbdb4b6-2937-4279-ba24-5f0f3b51b77d
     network: tcp
     tls: true
+    udp: true
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
@@ -161,20 +166,21 @@ proxies:
       public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4
       short-id: "73"
 
-- name: "墨西哥02"
+  - name: "墨西哥02"
     type: vless
     server: jiang.jiangniao.de
     port: 50682
     uuid: 41fe730f-127b-4c27-81ef-7e2a240b5e2e
     network: tcp
     tls: true
+    udp: true
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
       public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg
       short-id: "6f110ee0d9fd"
-      
+
 proxy-groups:
   # 手动选择
   - name: "Proxy"
@@ -203,7 +209,6 @@ proxy-groups:
       - "土耳其01"
       - "墨西哥01"
       - "墨西哥02"
-      
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -220,8 +225,6 @@ proxy-groups:
       - "土耳其01"
       - "墨西哥01"
       - "墨西哥02"
-      
-      
     url: http://www.gstatic.com/generate_204
     interval: 300
 
