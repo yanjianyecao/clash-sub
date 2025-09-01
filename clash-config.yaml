@@ -74,6 +74,22 @@ proxies:
       public-key: 4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM
       short-id: "5247b7"
 
+  - name: "美国02"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 32313
+    uuid: 741278f0-e49c-4aa3-9f00-7933987534f0
+    network: tcp
+    flow: xtls-rprx-vision-udp443
+    udp: true
+    tls: true
+    reality-opts:
+      public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI
+      short-id: 954ae509e86e10
+      spider-x: /
+    client-fingerprint: chrome
+    servername: yahoo.com
+    
   - name: "日本01"
     type: vless
     server: jiang1314.jiangniao44.top
@@ -116,22 +132,48 @@ proxies:
       public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI
       short-id: "8332"
 
-  - name: "美国02"
+- name: "土耳其01"
     type: vless
     server: jiang.jiangniao.de
-    port: 32313
-    uuid: 741278f0-e49c-4aa3-9f00-7933987534f0
+    port: 27519
+    uuid: 34c19ca4-2f3d-45e0-aa58-24846d80a7fe
     network: tcp
-    flow: xtls-rprx-vision-udp443
-    udp: true
     tls: true
-    reality-opts:
-      public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI
-      short-id: 954ae509e86e10
-      spider-x: /
-    client-fingerprint: chrome
+    flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM
+      short-id: 7388efc99b645c49
 
+ - name: "墨西哥01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 28841
+    uuid: 2bbdb4b6-2937-4279-ba24-5f0f3b51b77d
+    network: tcp
+    tls: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4
+      short-id: "73"
+
+- name: "墨西哥02"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 50682
+    uuid: 41fe730f-127b-4c27-81ef-7e2a240b5e2e
+    network: tcp
+    tls: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg
+      short-id: "6f110ee0d9fd"
+      
 proxy-groups:
   # 手动选择
   - name: "Proxy"
@@ -139,10 +181,13 @@ proxy-groups:
     proxies:
       - "Auto"
       - "美国01"
+      - "美国02"
       - "日本01"
       - "新加坡01"
       - "香港01"
-      - "美国02"
+      - "土耳其01"
+      - "墨西哥01"
+      - "墨西哥02"
       - DIRECT
 
   # 自动测速，定期选择延迟最低的节点
@@ -150,10 +195,14 @@ proxy-groups:
     type: url-test
     proxies:
       - "美国01"
+      - "美国02"
       - "日本01"
       - "新加坡01"
       - "香港01"
-      - "美国02"
+      - "土耳其01"
+      - "墨西哥01"
+      - "墨西哥02"
+      
     url: http://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
@@ -163,10 +212,14 @@ proxy-groups:
     type: fallback
     proxies:
       - "美国01"
+      - "美国02"
       - "日本01"
       - "新加坡01"
       - "香港01"
-      - "美国02"
+      - "土耳其01"
+      - "墨西哥01"
+      - "墨西哥02"
+      
     url: http://www.gstatic.com/generate_204
     interval: 300
 
