@@ -175,6 +175,22 @@ proxies:
       public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg
       short-id: "6f110ee0d9fd"
 
+  - name: "墨西哥03"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 41236
+    uuid: 1a16fad3-3182-445f-b27b-db018e4e5746
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA
+      short-id: "c5475819"
+      spider-x: /
+
   - name: "尼日利亚01"
     type: vless
     server: jiang.jiangniao.de
@@ -236,6 +252,7 @@ proxy-groups:
       - "土耳其01"
       - "墨西哥01"
       - "墨西哥02"
+      - "墨西哥03"
       - "尼日利亚01"
       - "美国家宽01"
       - "德国家宽01"
@@ -252,6 +269,7 @@ proxy-groups:
       - "土耳其01"
       - "墨西哥01"
       - "墨西哥02"
+      - "墨西哥03"
       - "尼日利亚01"
       - "美国家宽01"
       - "德国家宽01"
@@ -270,6 +288,7 @@ proxy-groups:
       - "土耳其01"
       - "墨西哥01"
       - "墨西哥02"
+      - "墨西哥03"
       - "尼日利亚01"
       - "美国家宽01"
       - "德国家宽01"
