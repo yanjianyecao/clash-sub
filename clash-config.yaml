@@ -260,21 +260,7 @@ proxies:
       short-id: "ad"
       spider-x: /
 
-  - name: "英国02"
-    type: vless
-    server: uk01.jiangniao.de
-    port: 43321
-    uuid: 6ab59138-17d6-4027-b614-5c31b808f569
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: 324MKEqqf8WzV-9jgscjBXJOrJRSAUHIHccy9bm6xDQ
-      short-id: "e7a6"
-      spider-x: /
+
 
 proxy-groups:
   - name: "Proxy"
@@ -294,7 +280,6 @@ proxy-groups:
       - "美国家宽01"
       - "德国家宽01"
       - "英国01"
-      - "英国02"
       - DIRECT
 
   - name: "Auto"
@@ -313,7 +298,6 @@ proxy-groups:
       - "美国家宽01"
       - "德国家宽01"
       - "英国01"
-      - "英国02"
     url: https://cp.cloudflare.com/generate_204
     interval: 180
     tolerance: 50
@@ -334,7 +318,6 @@ proxy-groups:
       - "美国家宽01"
       - "德国家宽01"
       - "英国01"
-      - "英国02"
     url: https://cp.cloudflare.com/generate_204
     interval: 180
 
@@ -349,7 +332,6 @@ proxy-groups:
     type: select
     proxies:
       - "英国01"
-      - "英国02"
       - "德国家宽01"
       - "土耳其01"
       - DIRECT
