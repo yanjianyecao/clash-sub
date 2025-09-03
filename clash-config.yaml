@@ -4,11 +4,17 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
+# —— 首包与并发优化（新增）——
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: chrome
+
 dns:
   enable: true
   ipv6: false
   listen: 0.0.0.0:1053
-  enhanced-mode: fake-ip
+  # 原为 fake-ip，改为 redir-host，通常首包更快；若个别站不适配再切回
+  enhanced-mode: redir-host
 
   default-nameserver:
     - 223.5.5.5
@@ -53,7 +59,6 @@ dns:
     - "download.windowsupdate.com"
 
 proxies:
-  # 你之前的节点们
   - name: "美国01"
     type: vless
     server: jiangniao.jiangniao44.top
@@ -239,6 +244,38 @@ proxies:
       short-id: "ff5881b5"
       spider-x: /
 
+  - name: "英国01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 25071
+    uuid: b08f446e-062f-41ec-8a1b-1498d23d1e48
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE
+      short-id: "ad"
+      spider-x: /
+
+  - name: "英国02"
+    type: vless
+    server: uk01.jiangniao.de
+    port: 43321
+    uuid: 6ab59138-17d6-4027-b614-5c31b808f569
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 324MKEqqf8WzV-9jgscjBXJOrJRSAUHIHccy9bm6xDQ
+      short-id: "e7a6"
+      spider-x: /
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -256,6 +293,8 @@ proxy-groups:
       - "尼日利亚01"
       - "美国家宽01"
       - "德国家宽01"
+      - "英国01"
+      - "英国02"
       - DIRECT
 
   - name: "Auto"
@@ -273,8 +312,10 @@ proxy-groups:
       - "尼日利亚01"
       - "美国家宽01"
       - "德国家宽01"
-    url: http://www.gstatic.com/generate_204
-    interval: 300
+      - "英国01"
+      - "英国02"
+    url: https://cp.cloudflare.com/generate_204
+    interval: 180
     tolerance: 50
 
   - name: "Fallback"
@@ -292,14 +333,26 @@ proxy-groups:
       - "尼日利亚01"
       - "美国家宽01"
       - "德国家宽01"
-    url: http://www.gstatic.com/generate_204
-    interval: 300
+      - "英国01"
+      - "英国02"
+    url: https://cp.cloudflare.com/generate_204
+    interval: 180
 
   - name: "家宽分组"
     type: select
     proxies:
       - "美国家宽01"
       - "德国家宽01"
+      - "墨西哥03"
+
+  - name: "欧洲分组"
+    type: select
+    proxies:
+      - "英国01"
+      - "英国02"
+      - "德国家宽01"
+      - "土耳其01"
+      - DIRECT
 
   - name: "Telegram"
     type: select
@@ -308,6 +361,7 @@ proxy-groups:
       - "Auto"
       - "Fallback"
       - "家宽分组"
+      - "欧洲分组"
       - DIRECT
 
   - name: "YouTube"
@@ -317,6 +371,7 @@ proxy-groups:
       - "Auto"
       - "Fallback"
       - "家宽分组"
+      - "欧洲分组"
       - DIRECT
 
   - name: "Netflix"
@@ -326,6 +381,7 @@ proxy-groups:
       - "Auto"
       - "Fallback"
       - "家宽分组"
+      - "欧洲分组"
       - DIRECT
 
   - name: "Twitter"
@@ -335,15 +391,15 @@ proxy-groups:
       - "Auto"
       - "Fallback"
       - "家宽分组"
+      - "欧洲分组"
       - DIRECT
 
   - name: "Default"
     type: select
     proxies:
       - "Proxy"
-      - "Auto"
-      - "Fallback"
       - "家宽分组"
+      - "欧洲分组"
       - DIRECT
 
 rules:
