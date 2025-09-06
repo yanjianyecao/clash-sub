@@ -13,22 +13,21 @@ dns:
   enable: true
   ipv6: false
   listen: 0.0.0.0:1053
-  # 原为 fake-ip，改为 redir-host，通常首包更快；若个别站不适配再切回
   enhanced-mode: redir-host
-
+  # 将响应最快的 DoH 服务放在最前面，提供更快、更安全的解析
   default-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
 
+  # 国内 nameserver 用于国内流量，确保解析不绕远路
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
 
+  # 将 Fallback DNS 合并到 nameserver 中，精简配置
   fallback:
     - https://1.1.1.1/dns-query
     - https://8.8.8.8/dns-query
-    - tls://1.1.1.1:853
-    - tls://8.8.8.8:853
 
   fallback-filter:
     geoip: true
@@ -36,9 +35,10 @@ dns:
     ip-cidr:
       - 240.0.0.0/4
 
+  # 国内域名使用国内 DNS，国外域名使用 DoH
   nameserver-policy:
     "geosite:cn": [223.5.5.5, 119.29.29.29]
-    "geosite:geolocation-!cn": ["https://1.1.1.1/dns-query", "https://8.8.8.8/dns-query"]
+    "geosite:geolocation-!cn": ["https://1.1.1.1/dns-query"]
 
   fake-ip-filter:
     - "*.lan"
@@ -164,6 +164,7 @@ proxies:
     reality-opts:
       public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4
       short-id: "73"
+      spider-x: /
 
   - name: "墨西哥02"
     type: vless
@@ -259,7 +260,6 @@ proxies:
       public-key: B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE
       short-id: "ad"
       spider-x: /
-
 
 
 proxy-groups:
