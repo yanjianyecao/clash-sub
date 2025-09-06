@@ -4,15 +4,14 @@ mode: Rule
 log-level: info
 external-controller: 127.0.0.1:9090
 
-# —— 首包与并发优化 ——
+# ——首包与并发优化——
 unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
-
 profile:
-  store-selected: true   # 记住分组/节点选择
+  store-selected: true
 
-# —— 嗅探（Mihomo）——
+# ——嗅探（Mihomo）——
 sniffer:
   enable: true
   sniffing:
@@ -35,34 +34,31 @@ dns:
   use-hosts: true
   respect-rules: true
 
-  # 启动用直连上游
+  # 冷启动用直连上游（快、避免环依赖）
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+  proxy-server-nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
 
-  # 国内域名直连解析；境外域名经“DNS出口”解析（避免死锁）
+  # 国外域名 → 经 Proxy 出站的 DoH
   nameserver-policy:
     "geosite:cn":
       - 223.5.5.5
       - 119.29.29.29
     "geosite:geolocation-!cn":
-      - https://1.1.1.1/dns-query#DNS出口
-      - https://8.8.8.8/dns-query#DNS出口
-
-  nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
-
-  proxy-server-nameserver:
-    - 223.5.5.5
-    - 119.29.29.29
+      - https://1.1.1.1/dns-query#Proxy
+      - https://8.8.8.8/dns-query#Proxy
 
   fallback:
-    - https://1.1.1.1/dns-query#DNS出口
-    - https://8.8.8.8/dns-query#DNS出口
-    - tls://1.1.1.1:853#DNS出口
-    - tls://8.8.8.8:853#DNS出口
-
+    - https://1.1.1.1/dns-query#Proxy
+    - https://8.8.8.8/dns-query#Proxy
+    - tls://1.1.1.1:853#Proxy
+    - tls://8.8.8.8:853#Proxy
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -87,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# —— 节点（原样保留）——
+# ——你的节点（原样保留）——
 proxies:
   - name: "美国01"
     type: vless
@@ -100,9 +96,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: 4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM
-      short-id: "5247b7"
+    reality-opts: { public-key: 4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM, short-id: "5247b7" }
 
   - name: "美国02"
     type: vless
@@ -115,10 +109,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI
-      short-id: 954ae509e86e10
-      spider-x: /
+    reality-opts: { public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI, short-id: 954ae509e86e10, spider-x: / }
 
   - name: "日本01"
     type: vless
@@ -131,9 +122,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: 2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw
-      short-id: "ec2c02bced"
+    reality-opts: { public-key: 2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw, short-id: "ec2c02bced" }
 
   - name: "新加坡01"
     type: vless
@@ -146,9 +135,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk
-      short-id: "617f75a2"
+    reality-opts: { public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk, short-id: "617f75a2" }
 
   - name: "香港01"
     type: vless
@@ -161,9 +148,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI
-      short-id: "8332"
+    reality-opts: { public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI, short-id: "8332" }
 
   - name: "土耳其01"
     type: vless
@@ -176,9 +161,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM
-      short-id: "7388efc99b645c49"
+    reality-opts: { public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM, short-id: "7388efc99b645c49" }
 
   - name: "墨西哥01"
     type: vless
@@ -191,9 +174,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4
-      short-id: "73"
+    reality-opts: { public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4, short-id: "73" }
 
   - name: "墨西哥02"
     type: vless
@@ -206,9 +187,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg
-      short-id: "6f110ee0d9fd"
+    reality-opts: { public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg, short-id: "6f110ee0d9fd" }
 
   - name: "墨西哥03"
     type: vless
@@ -221,10 +200,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA
-      short-id: "c5475819"
-      spider-x: /
+    reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: "c5475819", spider-x: / }
 
   - name: "尼日利亚01"
     type: vless
@@ -237,10 +213,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko
-      short-id: "4a9c954f51a83119"
-      spider-x: /
+    reality-opts: { public-key: LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko, short-id: "4a9c954f51a83119", spider-x: / }
 
   - name: "美国家宽01"
     type: vless
@@ -253,10 +226,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: CwOikz2Soyfs5YVZBuDMdKRjZ7IfAPWQr_prrvh38DM
-      short-id: "30e09630b2b7af"
-      spider-x: /
+    reality-opts: { public-key: CwOikz2Soyfs5YVZBuDMdKRjZ7IfAPWQr_prrvh38DM, short-id: "30e09630b2b7af", spider-x: / }
 
   - name: "德国家宽01"
     type: vless
@@ -269,10 +239,7 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: b6EZJ9PO1Y3WGy3f88s1NZYfCOoaYuI62WrHqxjOqCI
-      short-id: "ff5881b5"
-      spider-x: /
+    reality-opts: { public-key: b6EZJ9PO1Y3WGy3f88s1NZYfCOoaYuI62WrHqxjOqCI, short-id: "ff5881b5", spider-x: / }
 
   - name: "英国01"
     type: vless
@@ -285,50 +252,13 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts:
-      public-key: B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE
-      short-id: "ad"
-      spider-x: /
+    reality-opts: { public-key: B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE, short-id: "ad", spider-x: / }
 
 proxy-groups:
-  # 1) DNS 出口：避免启动死锁，默认 DIRECT
-  - name: "DNS出口"
-    type: select
-    proxies:
-      - DIRECT
-      - "Auto"
-      - "手选"
-
-  # 2) 总开关：建议恒定选择 Auto
   - name: "Proxy"
     type: select
     proxies:
-      - "Auto"
-      - "手选"
       - DIRECT
-
-  # 3) 自动测速（只放低延迟/家宽优质线路）
-  - name: "Auto"
-    type: url-test
-    proxies:
-      - "香港01"
-      - "日本01"
-      - "新加坡01"
-      - "美国01"
-      - "美国02"
-      - "美国家宽01"
-      - "德国家宽01"
-      - "墨西哥03"
-    url: https://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    lazy: true
-    timeout: 4000
-
-  # 4) 手动选择（包含全部节点）
-  - name: "手选"
-    type: select
-    proxies:
       - "香港01"
       - "日本01"
       - "新加坡01"
