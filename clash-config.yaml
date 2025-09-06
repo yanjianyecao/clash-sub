@@ -163,7 +163,7 @@ proxies:
     client-fingerprint: chrome
     reality-opts: { public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM, short-id: "7388efc99b645c49" }
 
-  - name: "墨西哥01"
+    - name: "墨西哥01"
     type: vless
     server: jiang.jiangniao.de
     port: 28841
@@ -174,7 +174,10 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4, short-id: "73" }
+    reality-opts:
+      public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4
+      short-id: "73"
+      spider-x: /
 
   - name: "墨西哥02"
     type: vless
