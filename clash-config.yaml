@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——你的节点（原样保留）——
+# ——你的节点（“墨西哥04”已添加在“墨西哥03”后）——
 proxies:
   - name: "美国01"
     type: vless
@@ -163,11 +163,11 @@ proxies:
     client-fingerprint: chrome
     reality-opts: { public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM, short-id: "7388efc99b645c49" }
 
-    - name: "墨西哥01"
+  - name: "墨西哥01"
     type: vless
     server: jiang.jiangniao.de
-    port: 28841
-    uuid: 2bbdb4b6-2937-4279-ba24-5f0f3b51b77d
+    port: 42025
+    uuid: bed8750e-36e0-425d-ae14-48d5b70cedd9
     network: tcp
     tls: true
     udp: true
@@ -175,8 +175,8 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4
-      short-id: "73"
+      public-key: 6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4
+      short-id: "e5d928499470"
       spider-x: /
 
   - name: "墨西哥02"
@@ -204,6 +204,23 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: "c5475819", spider-x: / }
+
+  # —— 新增：墨西哥04 —— 
+  - name: "墨西哥04"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 21699
+    uuid: 6e822f5f-4d65-4d7a-ab9b-44b2286c205d
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: dDrx6x-HWghQs3x_s5bVW8VICdhhACVYTThlHScWlyI
+      short-id: "9d3ec8"
+      spider-x: /
 
   - name: "尼日利亚01"
     type: vless
@@ -272,6 +289,7 @@ proxy-groups:
       - "墨西哥01"
       - "墨西哥02"
       - "墨西哥03"
+      - "墨西哥04"
       - "英国01"
       - "土耳其01"
       - "尼日利亚01"
