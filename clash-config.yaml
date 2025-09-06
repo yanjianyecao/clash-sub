@@ -12,7 +12,7 @@ global-client-fingerprint: chrome
 profile:
   store-selected: true   # 记住分组/节点选择
 
-# —— 流量嗅探（Mihomo 写法）——
+# —— 嗅探（Mihomo）——
 sniffer:
   enable: true
   sniffing:
@@ -30,19 +30,17 @@ dns:
   enable: true
   ipv6: false
   listen: 0.0.0.0:1053
-
-  # 建议 fake-ip（更稳更快）；若想用 redir-host 可自行改回
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
   respect-rules: true
 
-  # 启动解析用的直连上游（快）
+  # 启动用直连上游
   default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
 
-  # 国内域名 → 国内DNS；境外域名 → 经“DNS出口”分组的 DoH
+  # 国内域名直连解析；境外域名经“DNS出口”解析（避免死锁）
   nameserver-policy:
     "geosite:cn":
       - 223.5.5.5
@@ -51,17 +49,14 @@ dns:
       - https://1.1.1.1/dns-query#DNS出口
       - https://8.8.8.8/dns-query#DNS出口
 
-  # 兜底直连上游（很少用到）
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
 
-  # 解析代理服务器域名时优先用直连上游，避免启动环依赖
   proxy-server-nameserver:
     - 223.5.5.5
     - 119.29.29.29
 
-  # 兜底境外上游（通过 DNS出口 指定的出站）
   fallback:
     - https://1.1.1.1/dns-query#DNS出口
     - https://8.8.8.8/dns-query#DNS出口
@@ -92,7 +87,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# —— 节点（保持你原有参数不变）——
+# —— 节点（原样保留）——
 proxies:
   - name: "美国01"
     type: vless
@@ -296,26 +291,24 @@ proxies:
       spider-x: /
 
 proxy-groups:
-  # —— 新增：DNS 出口，默认 DIRECT，避免启动死锁 ——
+  # 1) DNS 出口：避免启动死锁，默认 DIRECT
   - name: "DNS出口"
     type: select
     proxies:
       - DIRECT
-      - "Auto(近场)"
-      - "Auto(家宽)"
-      - "手选全部"
+      - "Auto"
+      - "手选"
 
-  # 用户总开关
+  # 2) 总开关：建议恒定选择 Auto
   - name: "Proxy"
     type: select
     proxies:
-      - "Auto(近场)"
-      - "Auto(家宽)"
-      - "手选全部"
+      - "Auto"
+      - "手选"
       - DIRECT
 
-  # 近场自动测速（低时延区域）
-  - name: "Auto(近场)"
+  # 3) 自动测速（只放低延迟/家宽优质线路）
+  - name: "Auto"
     type: url-test
     proxies:
       - "香港01"
@@ -323,17 +316,6 @@ proxy-groups:
       - "新加坡01"
       - "美国01"
       - "美国02"
-    url: https://cp.cloudflare.com/generate_204
-    interval: 300
-    tolerance: 50
-    lazy: true
-    timeout: 4000
-    max-failed-times: 3
-
-  # 家宽线路自动测速（流媒体/社媒更稳）
-  - name: "Auto(家宽)"
-    type: url-test
-    proxies:
       - "美国家宽01"
       - "德国家宽01"
       - "墨西哥03"
@@ -343,8 +325,8 @@ proxy-groups:
     lazy: true
     timeout: 4000
 
-  # 全部节点手选（含远程/高时延）
-  - name: "手选全部"
+  # 4) 手动选择（包含全部节点）
+  - name: "手选"
     type: select
     proxies:
       - "香港01"
@@ -361,93 +343,9 @@ proxy-groups:
       - "土耳其01"
       - "尼日利亚01"
 
-  - name: "Fallback"
-    type: fallback
-    proxies:
-      - "Auto(近场)"
-      - "Auto(家宽)"
-      - "手选全部"
-    url: https://cp.cloudflare.com/generate_204
-    interval: 300
-    lazy: true
-    timeout: 4000
-
-  - name: "家宽分组"
-    type: select
-    proxies:
-      - "美国家宽01"
-      - "德国家宽01"
-      - "墨西哥03"
-
-  - name: "欧洲分组"
-    type: select
-    proxies:
-      - "英国01"
-      - "德国家宽01"
-      - "土耳其01"
-      - DIRECT
-
-  - name: "Telegram"
-    type: select
-    proxies:
-      - "Proxy"
-      - "Auto(近场)"
-      - "Auto(家宽)"
-      - "Fallback"
-      - "家宽分组"
-      - "欧洲分组"
-      - DIRECT
-
-  - name: "YouTube"
-    type: select
-    proxies:
-      - "Proxy"
-      - "Auto(家宽)"
-      - "Auto(近场)"
-      - "Fallback"
-      - "家宽分组"
-      - "欧洲分组"
-      - DIRECT
-
-  - name: "Netflix"
-    type: select
-    proxies:
-      - "Auto(家宽)"
-      - "家宽分组"
-      - "Proxy"
-      - "Fallback"
-      - "欧洲分组"
-      - DIRECT
-
-  - name: "Twitter"
-    type: select
-    proxies:
-      - "Proxy"
-      - "Auto(近场)"
-      - "Fallback"
-      - "家宽分组"
-      - "欧洲分组"
-      - DIRECT
-
-  - name: "Default"
-    type: select
-    proxies:
-      - "Proxy"
-      - "Auto(近场)"
-      - "Auto(家宽)"
-      - "家宽分组"
-      - "欧洲分组"
-      - DIRECT
-
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
   - DOMAIN-SUFFIX,lan,DIRECT
   - GEOSITE,CN,DIRECT
   - GEOIP,CN,DIRECT
-  - GEOSITE,telegram,Telegram
-  - GEOSITE,youtube,YouTube
-  - GEOSITE,netflix,Netflix
-  - DOMAIN-SUFFIX,twitter.com,Twitter
-  - DOMAIN-SUFFIX,x.com,Twitter
-  - DOMAIN-SUFFIX,twimg.com,Twitter
-  - MATCH,Default
+  - MATCH,Proxy
