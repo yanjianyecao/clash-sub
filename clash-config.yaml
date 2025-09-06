@@ -8,10 +8,11 @@ external-controller: 127.0.0.1:9090
 unified-delay: true
 tcp-concurrent: true
 global-client-fingerprint: chrome
-profile:
-  store-selected: true     # 记住你最后一次选择的分组/节点
 
-# —— 流量嗅探（mihomo 写法是 sniffer）——
+profile:
+  store-selected: true   # 记住分组/节点选择
+
+# —— 流量嗅探（Mihomo 写法）——
 sniffer:
   enable: true
   sniffing:
@@ -30,41 +31,42 @@ dns:
   ipv6: false
   listen: 0.0.0.0:1053
 
-  # 建议回到 fake-ip（综合更快更兼容）。若确实要 redir-host，请看下方注释。
+  # 建议 fake-ip（更稳更快）；若想用 redir-host 可自行改回
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   use-hosts: true
   respect-rules: true
 
-  # 启动用的国内递归（不经代理，快）
-  default-nameservers:
+  # 启动解析用的直连上游（快）
+  default-nameserver:
     - 223.5.5.5
     - 119.29.29.29
 
-  # 国内域名→国内DNS；境外域名→经代理的 DoH（核心提速点）
+  # 国内域名 → 国内DNS；境外域名 → 经“DNS出口”分组的 DoH
   nameserver-policy:
     "geosite:cn":
       - 223.5.5.5
       - 119.29.29.29
     "geosite:geolocation-!cn":
-      - https://1.1.1.1/dns-query#Proxy
-      - https://8.8.8.8/dns-query#Proxy
+      - https://1.1.1.1/dns-query#DNS出口
+      - https://8.8.8.8/dns-query#DNS出口
 
-  # 兜底本地上游（多数情况不会走到）
+  # 兜底直连上游（很少用到）
   nameserver:
     - 223.5.5.5
     - 119.29.29.29
 
-  # 兜底境外上游（必要时也会通过代理去查）
+  # 解析代理服务器域名时优先用直连上游，避免启动环依赖
   proxy-server-nameserver:
-    - https://1.1.1.1/dns-query
-    - https://8.8.8.8/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
 
+  # 兜底境外上游（通过 DNS出口 指定的出站）
   fallback:
-    - https://1.1.1.1/dns-query#Proxy
-    - https://8.8.8.8/dns-query#Proxy
-    - tls://1.1.1.1:853#Proxy
-    - tls://8.8.8.8:853#Proxy
+    - https://1.1.1.1/dns-query#DNS出口
+    - https://8.8.8.8/dns-query#DNS出口
+    - tls://1.1.1.1:853#DNS出口
+    - tls://8.8.8.8:853#DNS出口
 
   fallback-filter:
     geoip: true
@@ -90,24 +92,220 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# —— 你的节点（未改动参数，仅原样保留）——
+# —— 节点（保持你原有参数不变）——
 proxies:
-  - { name: "美国01", type: vless, server: jiangniao.jiangniao44.top, port: 49545, uuid: 8f7953fa-5ed6-4690-aaf1-f0c3da17d7a0, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM, short-id: "5247b7" } }
-  - { name: "美国02", type: vless, server: jiang.jiangniao.de, port: 32313, uuid: 741278f0-e49c-4aa3-9f00-7933987534f0, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI, short-id: 954ae509e86e10, spider-x: / } }
-  - { name: "日本01", type: vless, server: jiang1314.jiangniao44.top, port: 32786, uuid: 54e6dcc1-9e32-4147-81a0-6e70069a41ba, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw, short-id: "ec2c02bced" } }
-  - { name: "新加坡01", type: vless, server: sg01.jiangniao44.top, port: 10719, uuid: 93803b2d-661b-4442-be31-03eaa6f51fc1, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk, short-id: "617f75a2" } }
-  - { name: "香港01", type: vless, server: niao.jiangniao44.top, port: 56079, uuid: d2e6f717-0cdf-44f5-81e1-ad7f969ed903, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI, short-id: "8332" } }
-  - { name: "土耳其01", type: vless, server: jiang.jiangniao.de, port: 27519, uuid: 34c19ca4-2f3d-45e0-aa58-24846d80a7fe, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM, short-id: "7388efc99b645c49" } }
-  - { name: "墨西哥01", type: vless, server: jiang.jiangniao.de, port: 28841, uuid: 2bbdb4b6-2937-4279-ba24-5f0f3b51b77d, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4, short-id: "73" } }
-  - { name: "墨西哥02", type: vless, server: jiang.jiangniao.de, port: 50682, uuid: 41fe730f-127b-4c27-81ef-7e2a240b5e2e, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg, short-id: "6f110ee0d9fd" } }
-  - { name: "墨西哥03", type: vless, server: jiang.jiangniao.de, port: 41236, uuid: 1a16fad3-3182-445f-b27b-db018e4e5746, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: "c5475819", spider-x: / } }
-  - { name: "尼日利亚01", type: vless, server: jiang.jiangniao.de, port: 19253, uuid: fad9f8a7-13f3-4d42-823a-b7e9f6aff4f5, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko, short-id: "4a9c954f51a83119", spider-x: / } }
-  - { name: "美国家宽01", type: vless, server: jiang.jiangniao.de, port: 35111, uuid: 2108bb8f-96e3-4cb6-885e-9c7e3d769f90, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: CwOikz2Soyfs5YVZBuDMdKRjZ7IfAPWQr_prrvh38DM, short-id: "30e09630b2b7af", spider-x: / } }
-  - { name: "德国家宽01", type: vless, server: jiang.jiangniao.de, port: 54084, uuid: 281c6b35-4633-4153-9c8b-581a7ad0ac69, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: b6EZJ9PO1Y3WGy3f88s1NZYfCOoaYuI62WrHqxjOqCI, short-id: "ff5881b5", spider-x: / } }
-  - { name: "英国01", type: vless, server: jiang.jiangniao.de, port: 25071, uuid: b08f446e-062f-41ec-8a1b-1498d23d1e48, network: tcp, tls: true, udp: true, flow: "xtls-rprx-vision-udp443", servername: yahoo.com, client-fingerprint: chrome, reality-opts: { public-key: B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE, short-id: "ad", spider-x: / } }
+  - name: "美国01"
+    type: vless
+    server: jiangniao.jiangniao44.top
+    port: 49545
+    uuid: 8f7953fa-5ed6-4690-aaf1-f0c3da17d7a0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM
+      short-id: "5247b7"
+
+  - name: "美国02"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 32313
+    uuid: 741278f0-e49c-4aa3-9f00-7933987534f0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI
+      short-id: 954ae509e86e10
+      spider-x: /
+
+  - name: "日本01"
+    type: vless
+    server: jiang1314.jiangniao44.top
+    port: 32786
+    uuid: 54e6dcc1-9e32-4147-81a0-6e70069a41ba
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw
+      short-id: "ec2c02bced"
+
+  - name: "新加坡01"
+    type: vless
+    server: sg01.jiangniao44.top
+    port: 10719
+    uuid: 93803b2d-661b-4442-be31-03eaa6f51fc1
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk
+      short-id: "617f75a2"
+
+  - name: "香港01"
+    type: vless
+    server: niao.jiangniao44.top
+    port: 56079
+    uuid: d2e6f717-0cdf-44f5-81e1-ad7f969ed903
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI
+      short-id: "8332"
+
+  - name: "土耳其01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 27519
+    uuid: 34c19ca4-2f3d-45e0-aa58-24846d80a7fe
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM
+      short-id: "7388efc99b645c49"
+
+  - name: "墨西哥01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 28841
+    uuid: 2bbdb4b6-2937-4279-ba24-5f0f3b51b77d
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 4AJUyfD9YixhQn4B3c46VAYLC4LUuVc6twVm1yh78z4
+      short-id: "73"
+
+  - name: "墨西哥02"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 50682
+    uuid: 41fe730f-127b-4c27-81ef-7e2a240b5e2e
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg
+      short-id: "6f110ee0d9fd"
+
+  - name: "墨西哥03"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 41236
+    uuid: 1a16fad3-3182-445f-b27b-db018e4e5746
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA
+      short-id: "c5475819"
+      spider-x: /
+
+  - name: "尼日利亚01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 19253
+    uuid: fad9f8a7-13f3-4d42-823a-b7e9f6aff4f5
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko
+      short-id: "4a9c954f51a83119"
+      spider-x: /
+
+  - name: "美国家宽01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 35111
+    uuid: 2108bb8f-96e3-4cb6-885e-9c7e3d769f90
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: CwOikz2Soyfs5YVZBuDMdKRjZ7IfAPWQr_prrvh38DM
+      short-id: "30e09630b2b7af"
+      spider-x: /
+
+  - name: "德国家宽01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 54084
+    uuid: 281c6b35-4633-4153-9c8b-581a7ad0ac69
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: b6EZJ9PO1Y3WGy3f88s1NZYfCOoaYuI62WrHqxjOqCI
+      short-id: "ff5881b5"
+      spider-x: /
+
+  - name: "英国01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 25071
+    uuid: b08f446e-062f-41ec-8a1b-1498d23d1e48
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE
+      short-id: "ad"
+      spider-x: /
 
 proxy-groups:
-  # 用户主开关
+  # —— 新增：DNS 出口，默认 DIRECT，避免启动死锁 ——
+  - name: "DNS出口"
+    type: select
+    proxies:
+      - DIRECT
+      - "Auto(近场)"
+      - "Auto(家宽)"
+      - "手选全部"
+
+  # 用户总开关
   - name: "Proxy"
     type: select
     proxies:
@@ -116,7 +314,7 @@ proxy-groups:
       - "手选全部"
       - DIRECT
 
-  # —— 近场自动测速：只放 HK/JP/SG/US，去掉高延迟地区 ——  
+  # 近场自动测速（低时延区域）
   - name: "Auto(近场)"
     type: url-test
     proxies:
@@ -132,7 +330,7 @@ proxy-groups:
     timeout: 4000
     max-failed-times: 3
 
-  # —— 家宽线路单测（更适合流媒体/社媒）——
+  # 家宽线路自动测速（流媒体/社媒更稳）
   - name: "Auto(家宽)"
     type: url-test
     proxies:
@@ -145,7 +343,7 @@ proxy-groups:
     lazy: true
     timeout: 4000
 
-  # —— 全部节点手选（包含高时延/远程地区）——
+  # 全部节点手选（含远程/高时延）
   - name: "手选全部"
     type: select
     proxies:
