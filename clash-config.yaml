@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——你的节点（“墨西哥04”已添加在“墨西哥03”后）——
+# ——你的节点（新增“尼日利亚02”）——
 proxies:
   - name: "美国01"
     type: vless
@@ -205,7 +205,6 @@ proxies:
     client-fingerprint: chrome
     reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: "c5475819", spider-x: / }
 
-  # —— 新增：墨西哥04 —— 
   - name: "墨西哥04"
     type: vless
     server: jiang.jiangniao.de
@@ -234,6 +233,23 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts: { public-key: LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko, short-id: "4a9c954f51a83119", spider-x: / }
+
+  # —— 新增：尼日利亚02（按你提供的 vless 链接）——
+  - name: "尼日利亚02"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 32506
+    uuid: 49f43584-8742-43d0-9ea6-e38e0ce772b4
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: N2D2KLCsykq0fsUUwjrKvHdUo5b5SUfiLbXmSkJcfx8
+      short-id: "9acb194f8394a70c"
+      spider-x: /
 
   - name: "美国家宽01"
     type: vless
@@ -293,6 +309,7 @@ proxy-groups:
       - "英国01"
       - "土耳其01"
       - "尼日利亚01"
+      - "尼日利亚02"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
