@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——你的节点（新增“尼日利亚02”）——
+# ——你的节点（新增“香港02”在“香港01”后）——
 proxies:
   - name: "美国01"
     type: vless
@@ -149,6 +149,23 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts: { public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI, short-id: "8332" }
+
+  # —— 新增：香港02（按你提供的 vless 链接）——
+  - name: "香港02"
+    type: vless
+    server: cnf.jiangniao.de
+    port: 14339
+    uuid: 305b46c8-62c5-4a5f-8eca-49696504b4c9
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: mFLxuM5neHOj_JiAaSXzKhQHNBjJOdMrcvi0nBZvoHg
+      short-id: "ff6c1c7939"
+      spider-x: /
 
   - name: "土耳其01"
     type: vless
@@ -234,7 +251,6 @@ proxies:
     client-fingerprint: chrome
     reality-opts: { public-key: LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko, short-id: "4a9c954f51a83119", spider-x: / }
 
-  # —— 新增：尼日利亚02（按你提供的 vless 链接）——
   - name: "尼日利亚02"
     type: vless
     server: jiang.jiangniao.de
@@ -296,6 +312,7 @@ proxy-groups:
     proxies:
       - DIRECT
       - "香港01"
+      - "香港02"
       - "日本01"
       - "新加坡01"
       - "美国01"
