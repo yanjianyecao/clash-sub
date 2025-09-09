@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——你的节点（新增“香港02”在“香港01”后）——
+# ——你的节点（新增“香港03”在“香港02”后）——
 proxies:
   - name: "美国01"
     type: vless
@@ -150,7 +150,6 @@ proxies:
     client-fingerprint: chrome
     reality-opts: { public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI, short-id: "8332" }
 
-  # —— 新增：香港02（按你提供的 vless 链接）——
   - name: "香港02"
     type: vless
     server: cnf.jiangniao.de
@@ -165,6 +164,23 @@ proxies:
     reality-opts:
       public-key: mFLxuM5neHOj_JiAaSXzKhQHNBjJOdMrcvi0nBZvoHg
       short-id: "ff6c1c7939"
+      spider-x: /
+
+  # —— 新增：香港03（按你提供的 vless 链接）——
+  - name: "香港03"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 14967
+    uuid: 5f7e69bb-dd40-4b60-8984-5a1f1730091b
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: cyuhOUi87VHVSX8XQnZdV2nDR98Hw4Z1A1RC3QA-dB4
+      short-id: "ce9c32d59c9c8189"
       spider-x: /
 
   - name: "土耳其01"
@@ -313,6 +329,7 @@ proxy-groups:
       - DIRECT
       - "香港01"
       - "香港02"
+      - "香港03"
       - "日本01"
       - "新加坡01"
       - "美国01"
