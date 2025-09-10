@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——你的节点（新增“日本02”在“日本01”后）——
+# ——你的节点（新增：新加坡02、台湾01）——
 proxies:
   - name: "美国01"
     type: vless
@@ -124,7 +124,6 @@ proxies:
     client-fingerprint: chrome
     reality-opts: { public-key: 2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw, short-id: "ec2c02bced" }
 
-  # —— 新增：日本02（按你提供的 vless 链接）——
   - name: "日本02"
     type: vless
     server: rfc.jiangniao.de
@@ -153,6 +152,40 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts: { public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk, short-id: "617f75a2" }
+
+  # —— 新增：新加坡02 ——
+  - name: "新加坡02"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 57654
+    uuid: 93b3ec8f-682f-46ae-a454-f0edc9d095e6
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: IyR-WPrH-SZXLx6K-8H6gYLXTxK1fObGNo8_c3fGoyA
+      short-id: "6afba8010f43"
+      spider-x: /
+
+  # —— 新增：台湾01 ——
+  - name: "台湾01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 22625
+    uuid: f79c11fb-ba1c-4c58-937a-02f00988313b
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: 3z4OC_y8EeWEyCk1CNzoDT6rFkOAqBoTSwI7gq75KHI
+      short-id: "7fb499f7b3"
+      spider-x: /
 
   - name: "香港01"
     type: vless
@@ -349,6 +382,8 @@ proxy-groups:
       - "日本01"
       - "日本02"
       - "新加坡01"
+      - "新加坡02"
+      - "台湾01"
       - "美国01"
       - "美国02"
       - "美国家宽01"
