@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——你的节点（新增：台湾02）——
+# ——节点列表（含修复后的“土耳其01”）——
 proxies:
   - name: "美国01"
     type: vless
@@ -96,7 +96,9 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: 4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM, short-id: "5247b7" }
+    reality-opts:
+      public-key: "4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM"
+      short-id: "5247b7"
 
   - name: "美国02"
     type: vless
@@ -109,7 +111,10 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI, short-id: 954ae509e86e10, spider-x: / }
+    reality-opts:
+      public-key: "KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI"
+      short-id: "954ae509e86e10"
+      spider-x: /
 
   - name: "日本01"
     type: vless
@@ -122,7 +127,9 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: 2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw, short-id: "ec2c02bced" }
+    reality-opts:
+      public-key: "2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw"
+      short-id: "ec2c02bced"
 
   - name: "日本02"
     type: vless
@@ -136,7 +143,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: XdWaJDqRHBcPme2NXM_s6zKhvRuRaTjYw27gbFLCzW0
+      public-key: "XdWaJDqRHBcPme2NXM_s6zKhvRuRaTjYw27gbFLCzW0"
       short-id: "3279de5b00f2"
       spider-x: /
 
@@ -151,7 +158,9 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: 8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk, short-id: "617f75a2" }
+    reality-opts:
+      public-key: "8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk"
+      short-id: "617f75a2"
 
   - name: "新加坡02"
     type: vless
@@ -165,7 +174,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: IyR-WPrH-SZXLx6K-8H6gYLXTxK1fObGNo8_c3fGoyA
+      public-key: "IyR-WPrH-SZXLx6K-8H6gYLXTxK1fObGNo8_c3fGoyA"
       short-id: "6afba8010f43"
       spider-x: /
 
@@ -181,11 +190,10 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 3z4OC_y8EeWEyCk1CNzoDT6rFkOAqBoTSwI7gq75KHI
+      public-key: "3z4OC_y8EeWEyCk1CNzoDT6rFkOAqBoTSwI7gq75KHI"
       short-id: "7fb499f7b3"
       spider-x: /
 
-  # —— 新增：台湾02 ——
   - name: "台湾02"
     type: vless
     server: rfc.jiangniao.de
@@ -198,7 +206,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: Hh-WcEN7dRioFhuwjcL6qOpdW4dkMTe22TAjNH97SEw
+      public-key: "Hh-WcEN7dRioFhuwjcL6qOpdW4dkMTe22TAjNH97SEw"
       short-id: "1ee46e794fa17e"
       spider-x: /
 
@@ -213,7 +221,9 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: 8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI, short-id: "8332" }
+    reality-opts:
+      public-key: "8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI"
+      short-id: "8332"
 
   - name: "香港02"
     type: vless
@@ -227,7 +237,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: mFLxuM5neHOj_JiAaSXzKhQHNBjJOdMrcvi0nBZvoHg
+      public-key: "mFLxuM5neHOj_JiAaSXzKhQHNBjJOdMrcvi0nBZvoHg"
       short-id: "ff6c1c7939"
       spider-x: /
 
@@ -243,27 +253,25 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: cyuhOUi87VHVSX8XQnZdV2nDR98Hw4Z1A1RC3QA-dB4
+      public-key: "cyuhOUi87VHVSX8XQnZdV2nDR98Hw4Z1A1RC3QA-dB4"
       short-id: "ce9c32d59c9c8189"
       spider-x: /
 
-  # 修复后的「土耳其01」
-- name: "土耳其01"
-  type: vless
-  server: jiang.jiangniao.de
-  port: 27519
-  uuid: 34c19ca4-2f3d-45e0-aa58-24846d80a7fe
-  network: tcp
-  tls: true
-  udp: true
-  flow: "xtls-rprx-vision-udp443"
-  servername: yahoo.com
-  client-fingerprint: chrome
-  reality-opts:
-    public-key: "kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM"  # ✅ 正确的 43 位 pbk
-    short-id: "7388efc99b645c49"
-    spider-x: /
-
+  - name: "土耳其01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 27519
+    uuid: 34c19ca4-2f3d-45e0-aa58-24846d80a7fe
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM"   # ✅ 修正后的 pbk
+      short-id: "7388efc99b645c49"
+      spider-x: /
 
   - name: "墨西哥01"
     type: vless
@@ -277,7 +285,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: 6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4
+      public-key: "6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4"
       short-id: "e5d928499470"
       spider-x: /
 
@@ -292,7 +300,9 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg, short-id: "6f110ee0d9fd" }
+    reality-opts:
+      public-key: "zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg"
+      short-id: "6f110ee0d9fd"
 
   - name: "墨西哥03"
     type: vless
@@ -305,7 +315,10 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA, short-id: "c5475819", spider-x: / }
+    reality-opts:
+      public-key: "lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA"
+      short-id: "c5475819"
+      spider-x: /
 
   - name: "墨西哥04"
     type: vless
@@ -319,7 +332,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: dDrx6x-HWghQs3x_s5bVW8VICdhhACVYTThlHScWlyI
+      public-key: "dDrx6x-HWghQs3x_s5bVW8VICdhhACVYTThlHScWlyI"
       short-id: "9d3ec8"
       spider-x: /
 
@@ -334,7 +347,10 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko, short-id: "4a9c954f51a83119", spider-x: / }
+    reality-opts:
+      public-key: "LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko"
+      short-id: "4a9c954f51a83119"
+      spider-x: /
 
   - name: "尼日利亚02"
     type: vless
@@ -348,7 +364,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: N2D2KLCsykq0fsUUwjrKvHdUo5b5SUfiLbXmSkJcfx8
+      public-key: "N2D2KLCsykq0fsUUwjrKvHdUo5b5SUfiLbXmSkJcfx8"
       short-id: "9acb194f8394a70c"
       spider-x: /
 
@@ -363,7 +379,10 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: CwOikz2Soyfs5YVZBuDMdKRjZ7IfAPWQr_prrvh38DM, short-id: "30e09630b2b7af", spider-x: / }
+    reality-opts:
+      public-key: "CwOikz2Soyfs5YVZBuDMdKRjZ7IfAPWQr_prrvh38DM"
+      short-id: "30e09630b2b7af"
+      spider-x: /
 
   - name: "德国家宽01"
     type: vless
@@ -376,7 +395,10 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: b6EZJ9PO1Y3WGy3f88s1NZYfCOoaYuI62WrHqxjOqCI, short-id: "ff5881b5", spider-x: / }
+    reality-opts:
+      public-key: "b6EZJ9PO1Y3WGy3f88s1NZYfCOoaYuI62WrHqxjOqCI"
+      short-id: "ff5881b5"
+      spider-x: /
 
   - name: "英国01"
     type: vless
@@ -389,7 +411,10 @@ proxies:
     flow: "xtls-rprx-vision-udp443"
     servername: yahoo.com
     client-fingerprint: chrome
-    reality-opts: { public-key: B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE, short-id: "ad", spider-x: / }
+    reality-opts:
+      public-key: "B_Jriyd677O75kuZz2RsI-1pbVfqegTDKmYR7xDBpWE"
+      short-id: "ad"
+      spider-x: /
 
 proxy-groups:
   - name: "Proxy"
