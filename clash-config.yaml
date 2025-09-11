@@ -194,21 +194,7 @@ proxies:
       short-id: "7fb499f7b3"
       spider-x: /
 
-  - name: "台湾02"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 31147
-    uuid: dddde5d8-0bc3-4532-8e57-086786ea8ecd
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "Hh-WcEN7dRioFhuwjcL6qOpdW4dkMTe22TAjNH97SEw"
-      short-id: "1ee46e794fa17e"
-      spider-x: /
+
 
   - name: "香港01"
     type: vless
@@ -429,7 +415,6 @@ proxy-groups:
       - "新加坡01"
       - "新加坡02"
       - "台湾01"
-      - "台湾02"
       - "美国01"
       - "美国02"
       - "美国家宽01"
