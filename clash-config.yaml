@@ -147,6 +147,22 @@ proxies:
       short-id: "3279de5b00f2"
       spider-x: /
 
+  - name: "日本03"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 40669
+    uuid: 8de8923b-85c0-4daa-a4a9-d2182295447e
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "Wg6dx0zz4jF_ZLL7dtbAf32J2l_3KXGeFtbkdC0VXyY"
+      short-id: "9bf1a5d26dc0e2c4"
+      spider-x: /
+
   - name: "新加坡01"
     type: vless
     server: sg01.jiangniao44.top
@@ -428,6 +444,7 @@ proxy-groups:
       - "香港03"
       - "日本01"
       - "日本02"
+      - "日本03"
       - "新加坡01"
       - "新加坡02"
       - "新加坡03"
