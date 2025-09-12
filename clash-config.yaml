@@ -226,8 +226,6 @@ proxies:
       short-id: "7fb499f7b3"
       spider-x: /
 
-
-
   - name: "香港01"
     type: vless
     server: niao.jiangniao44.top
@@ -268,10 +266,10 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "cyuhOUi87VHVSX8XQnZdV2nDR98Hw4Z1A1RC3QA-dB4"
+      public-key: "d1dzvm7d9JN2JunFIU0-cXH6ooS6VT-fUi_Z0G2Tfys"
       short-id: "ce9c32d59c9c8189"
       spider-x: /
 
