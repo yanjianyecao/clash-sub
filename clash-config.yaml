@@ -116,6 +116,22 @@ proxies:
       short-id: "954ae509e86e10"
       spider-x: /
 
+  - name: "美国03"
+    type: vless
+    server: jiangniao.jiangniao44.top
+    port: 30767
+    uuid: 56cd42ef-83ac-49e1-81af-c20f89286fd0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "-iY2FuYNBLM7-_oJONO87TmupevVPls8VKSov3_vdhk"
+      short-id: "072071"
+      spider-x: /
+
   - name: "日本01"
     type: vless
     server: jiang1314.jiangniao44.top
@@ -449,6 +465,7 @@ proxy-groups:
       - "台湾01"
       - "美国01"
       - "美国02"
+      - "美国03"
       - "美国家宽01"
       - "德国家宽01"
       - "墨西哥01"
