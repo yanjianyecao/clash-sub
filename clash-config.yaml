@@ -289,6 +289,54 @@ proxies:
       short-id: "ce9c32d59c9c8189"
       spider-x: /
 
+  - name: "香港04"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 49624
+    uuid: 6245f873-c14d-4cc9-895c-5e1816a8debb
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "qfH78UdGFMqCFfdPpHgHI5szzu2KXrVpxoyG12lZono"
+      short-id: "a4"
+      spider-x: /
+
+  - name: "香港05"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 27277
+    uuid: 4564fd83-b46f-4781-ba74-fd2b6a29875c
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "J2b48DFltcG4Eg4ZUlzoi76Mvx20U_kLhKnUyFZKXyA"
+      short-id: "286927"
+      spider-x: /
+
+  - name: "印度01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 16038
+    uuid: ad898dc0-5173-4d84-a495-92adbee22bde
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "Wi_dye6vy6jr4iEBPHJKvBCf-bXflSlp_AI84tuQfzE"
+      short-id: "7c485f0d"
+      spider-x: /
+
   - name: "土耳其01"
     type: vless
     server: jiang.jiangniao.de
@@ -301,7 +349,7 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM"   # ✅ 修正后的 pbk
+      public-key: "kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM"
       short-id: "7388efc99b645c49"
       spider-x: /
 
@@ -400,6 +448,22 @@ proxies:
       short-id: "9acb194f8394a70c"
       spider-x: /
 
+  - name: "德国01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 21361
+    uuid: e8216fcb-2a03-4847-9290-eeb8790bc51f
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "gpOVDq28Vszg_aOf5TJl4eNwSwk_nQpDuJhq5MPJEX8"
+      short-id: "12e0c546c0987b10"
+      spider-x: /
+
   - name: "美国家宽01"
     type: vless
     server: jiang.jiangniao.de
@@ -456,6 +520,8 @@ proxy-groups:
       - "香港01"
       - "香港02"
       - "香港03"
+      - "香港04"
+      - "香港05"
       - "日本01"
       - "日本02"
       - "日本03"
@@ -466,7 +532,9 @@ proxy-groups:
       - "美国01"
       - "美国02"
       - "美国03"
+      - "印度01"
       - "美国家宽01"
+      - "德国01"
       - "德国家宽01"
       - "墨西哥01"
       - "墨西哥02"
