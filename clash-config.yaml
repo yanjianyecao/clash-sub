@@ -242,6 +242,22 @@ proxies:
       short-id: "7fb499f7b3"
       spider-x: /
 
+  - name: "台湾02"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 12205
+    uuid: 19faee6a-47e9-4eab-991c-2bad3d663695
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "5zgaQVEXvj8gjiZlK6Sv9DT7MWgj9j9oxrrDbez1zVo"
+      short-id: "c2"
+      spider-x: /
+
   - name: "香港01"
     type: vless
     server: niao.jiangniao44.top
@@ -512,6 +528,86 @@ proxies:
       short-id: "ad"
       spider-x: /
 
+  - name: "芬兰01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 18782
+    uuid: cb80c118-a2f9-47c8-9240-e9f84f0fb337
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "8azH5cnew4LV8UT_FY10GaH6yX4KqqlYZ4GPKtzD2Rg"
+      short-id: "ba"
+      spider-x: /
+
+  - name: "乌克兰01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 24590
+    uuid: fc06fb02-ef7c-4608-a363-2d2314043bd0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "Tp7HWnEMbVR46uljXL7JnV_Iu9KRPByEvs5DcdenC2o"
+      short-id: "48fbd12319"
+      spider-x: /
+
+  - name: "俄罗斯01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 22385
+    uuid: 3b0958a8-b9bf-4a8b-b97d-19b993f66eb0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "OUGQpGvMpViTmubP6jRqsgqJ-RJ_n-CEcc6zZI9JH1g"
+      short-id: "797036"
+      spider-x: /
+
+  - name: "奥地利01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 38704
+    uuid: f7a63b03-90e1-4ab6-be0c-6b4147f3b9be
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "DPHQRHWnrzDo48d2H-5y-O1OatUDb09GQX6SaGeablo"
+      short-id: "83dd3fe84b"
+      spider-x: /
+
+  - name: "新西兰01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 16475
+    uuid: 6cd6eb7c-f715-4c69-b9ec-5f3a46a275bf
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "4CeXM3VjkWtldeRvy23sPNTYseiCj8MmpSxwdETWPBQ"
+      short-id: "af"
+      spider-x: /
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -529,18 +625,24 @@ proxy-groups:
       - "新加坡02"
       - "新加坡03"
       - "台湾01"
+      - "台湾02"
       - "美国01"
       - "美国02"
       - "美国03"
       - "印度01"
+      - "新西兰01"
       - "美国家宽01"
       - "德国01"
       - "德国家宽01"
+      - "英国01"
+      - "芬兰01"
+      - "乌克兰01"
+      - "俄罗斯01"
+      - "奥地利01"
       - "墨西哥01"
       - "墨西哥02"
       - "墨西哥03"
       - "墨西哥04"
-      - "英国01"
       - "土耳其01"
       - "尼日利亚01"
       - "尼日利亚02"
