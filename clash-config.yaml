@@ -132,6 +132,22 @@ proxies:
       short-id: "072071"
       spider-x: /
 
+  - name: "美国04"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 33901
+    uuid: 6649a959-da30-46b6-a282-93f3cc91019a
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "7pEGJXrnTqrq4BvWCod1TLgCu99W1RENDrvinvdRaW4"
+      short-id: "8a7cc0e4e9"
+      spider-x: "/"
+
   - name: "日本01"
     type: vless
     server: jiang1314.jiangniao44.top
@@ -629,6 +645,7 @@ proxy-groups:
       - "美国01"
       - "美国02"
       - "美国03"
+      - "美国04"
       - "印度01"
       - "新西兰01"
       - "美国家宽01"
