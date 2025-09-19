@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（含修复后的“土耳其01”）——
+# ——节点列表（已按要求修改）——
 proxies:
   - name: "美国01"
     type: vless
@@ -197,21 +197,6 @@ proxies:
 
   - name: "新加坡01"
     type: vless
-    server: sg01.jiangniao44.top
-    port: 10719
-    uuid: 93803b2d-661b-4442-be31-03eaa6f51fc1
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "8l_zz5Bdvpn1v6FuPIKxLz-dOyQH0ueT5YHUiU6MNQk"
-      short-id: "617f75a2"
-
-  - name: "新加坡02"
-    type: vless
     server: rfc.jiangniao.de
     port: 57654
     uuid: 93b3ec8f-682f-46ae-a454-f0edc9d095e6
@@ -226,7 +211,7 @@ proxies:
       short-id: "6afba8010f43"
       spider-x: /
 
-  - name: "新加坡03"
+  - name: "新加坡02"
     type: vless
     server: rfc.jiangniao.de
     port: 50821
@@ -480,6 +465,22 @@ proxies:
       short-id: "9acb194f8394a70c"
       spider-x: /
 
+  - name: "尼日利亚03"
+    type: vless
+    server: snapstack.jiangniao.de
+    port: 11721
+    uuid: e575fb18-65d5-4420-ba11-d94a682465ad
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: sRxaEV3EvZ9kQzzOUQbDsrJ3W5J-4WTQEwnPugxNl1Q
+      short-id: 7ee282ac
+    spx: /
+
   - name: "德国01"
     type: vless
     server: jiang.jiangniao.de
@@ -495,6 +496,22 @@ proxies:
       public-key: "gpOVDq28Vszg_aOf5TJl4eNwSwk_nQpDuJhq5MPJEX8"
       short-id: "12e0c546c0987b10"
       spider-x: /
+
+  - name: "德国02"
+    type: vless
+    server: snapstack.jiangniao.de
+    port: 19065
+    uuid: bf944097-7b24-4702-9833-3056bc110224
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: Do9YikM1rSMdgIIEIbKtxVxNjbOlNmYt3143BJEaVAA
+      short-id: "42"
+    spx: /
 
   - name: "美国家宽01"
     type: vless
@@ -639,7 +656,6 @@ proxy-groups:
       - "日本03"
       - "新加坡01"
       - "新加坡02"
-      - "新加坡03"
       - "台湾01"
       - "台湾02"
       - "美国01"
@@ -650,6 +666,7 @@ proxy-groups:
       - "新西兰01"
       - "美国家宽01"
       - "德国01"
+      - "德国02"
       - "德国家宽01"
       - "英国01"
       - "芬兰01"
@@ -663,6 +680,7 @@ proxy-groups:
       - "土耳其01"
       - "尼日利亚01"
       - "尼日利亚02"
+      - "尼日利亚03"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
