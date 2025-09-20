@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（已按要求修改）——
+# ——节点列表（含新增“德国02”与已顺延重命名的新加坡）——
 proxies:
   - name: "美国01"
     type: vless
@@ -465,22 +465,6 @@ proxies:
       short-id: "9acb194f8394a70c"
       spider-x: /
 
-  - name: "尼日利亚03"
-    type: vless
-    server: snapstack.jiangniao.de
-    port: 11721
-    uuid: e575fb18-65d5-4420-ba11-d94a682465ad
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: sRxaEV3EvZ9kQzzOUQbDsrJ3W5J-4WTQEwnPugxNl1Q
-      short-id: 7ee282ac
-    spx: /
-
   - name: "德国01"
     type: vless
     server: jiang.jiangniao.de
@@ -509,9 +493,9 @@ proxies:
     servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: Do9YikM1rSMdgIIEIbKtxVxNjbOlNmYt3143BJEaVAA
+      public-key: "Do9YikM1rSMdgIIEIbKtxVxNjbOlNmYt3143BJEaVAA"
       short-id: "42"
-    spx: /
+      spider-x: "/"
 
   - name: "美国家宽01"
     type: vless
@@ -680,7 +664,6 @@ proxy-groups:
       - "土耳其01"
       - "尼日利亚01"
       - "尼日利亚02"
-      - "尼日利亚03"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
