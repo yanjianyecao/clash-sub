@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（新增“尼日利亚03”）——
+# ——节点列表（把“俄罗斯01”改名为 Russia01）——
 proxies:
   - name: "美国01"
     type: vless
@@ -639,6 +639,22 @@ proxies:
     reality-opts:
       public-key: "P3OBzOmW6Y4euP8GsgN9vB_MnbU1s3784DcZIBAhwgI"
       short-id: "fbb6ad7db1b6e1"
+      spider-x: "/"
+
+  - name: "俄罗斯01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 22385
+    uuid: 3b0958a8-b9bf-4a8b-b97d-19b993f66eb0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "OUGQpGvMpViTmubP6jRqsgqJ-RJ_n-CEcc6zZI9JH1g"
+      short-id: "797036"
       spider-x: "/"
 
 proxy-groups:
