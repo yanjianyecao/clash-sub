@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（含新增“德国02”与已顺延重命名的新加坡）——
+# ——节点列表（已删“奥地利01”，新增“吉尔吉斯斯坦01”）——
 proxies:
   - name: "美国01"
     type: vless
@@ -593,22 +593,6 @@ proxies:
       short-id: "797036"
       spider-x: /
 
-  - name: "奥地利01"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 38704
-    uuid: f7a63b03-90e1-4ab6-be0c-6b4147f3b9be
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "DPHQRHWnrzDo48d2H-5y-O1OatUDb09GQX6SaGeablo"
-      short-id: "83dd3fe84b"
-      spider-x: /
-
   - name: "新西兰01"
     type: vless
     server: rfc.jiangniao.de
@@ -624,6 +608,22 @@ proxies:
       public-key: "4CeXM3VjkWtldeRvy23sPNTYseiCj8MmpSxwdETWPBQ"
       short-id: "af"
       spider-x: /
+
+  - name: "吉尔吉斯斯坦01"
+    type: vless
+    server: jiang1314.jiangniao44.top
+    port: 19168
+    uuid: 32cff7d0-8cc8-43fb-83c7-3f8db04d63c8
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "Jytt3P7bc6AQI1Swl9kGR1VejhmVQmepx1kU6OCafTk"
+      short-id: "61"
+      spider-x: "/"
 
 proxy-groups:
   - name: "Proxy"
@@ -656,7 +656,6 @@ proxy-groups:
       - "芬兰01"
       - "乌克兰01"
       - "俄罗斯01"
-      - "奥地利01"
       - "墨西哥01"
       - "墨西哥02"
       - "墨西哥03"
@@ -664,6 +663,7 @@ proxy-groups:
       - "土耳其01"
       - "尼日利亚01"
       - "尼日利亚02"
+      - "吉尔吉斯斯坦01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
