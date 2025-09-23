@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（已删“奥地利01”，新增“吉尔吉斯斯坦01”）——
+# ——节点列表（新增“尼日利亚03”）——
 proxies:
   - name: "美国01"
     type: vless
@@ -465,6 +465,22 @@ proxies:
       short-id: "9acb194f8394a70c"
       spider-x: /
 
+  - name: "尼日利亚03"
+    type: vless
+    server: snapstack.jiangniao.de
+    port: 18928
+    uuid: b374360e-f6d4-434a-a96d-1d3a4402b276
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "TlgOtcX5sZOF-42tBNSgsjInY99ptKI_nDcQLMTJaF8"
+      short-id: "be"
+      spider-x: "/"
+
   - name: "德国01"
     type: vless
     server: jiang.jiangniao.de
@@ -484,8 +500,8 @@ proxies:
   - name: "德国02"
     type: vless
     server: snapstack.jiangniao.de
-    port: 19065
-    uuid: bf944097-7b24-4702-9833-3056bc110224
+    port: 11873
+    uuid: 1d9dae7c-db5b-4d78-b4cc-2933459713cb
     network: tcp
     tls: true
     udp: true
@@ -493,8 +509,8 @@ proxies:
     servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "Do9YikM1rSMdgIIEIbKtxVxNjbOlNmYt3143BJEaVAA"
-      short-id: "42"
+      public-key: "zz63GUGkBDMUvZNzEY6ugD6XYuNT0TIe-NefzNhqEhw"
+      short-id: "e4"
       spider-x: "/"
 
   - name: "美国家宽01"
@@ -577,22 +593,6 @@ proxies:
       short-id: "48fbd12319"
       spider-x: /
 
-  - name: "俄罗斯01"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 22385
-    uuid: 3b0958a8-b9bf-4a8b-b97d-19b993f66eb0
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "OUGQpGvMpViTmubP6jRqsgqJ-RJ_n-CEcc6zZI9JH1g"
-      short-id: "797036"
-      spider-x: /
-
   - name: "新西兰01"
     type: vless
     server: rfc.jiangniao.de
@@ -623,6 +623,22 @@ proxies:
     reality-opts:
       public-key: "Jytt3P7bc6AQI1Swl9kGR1VejhmVQmepx1kU6OCafTk"
       short-id: "61"
+      spider-x: "/"
+
+  - name: "冰岛01"
+    type: vless
+    server: snapstack.jiangniao.de
+    port: 35631
+    uuid: 341be18f-03dc-42ed-adcc-d688eb03c33b
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "P3OBzOmW6Y4euP8GsgN9vB_MnbU1s3784DcZIBAhwgI"
+      short-id: "fbb6ad7db1b6e1"
       spider-x: "/"
 
 proxy-groups:
@@ -663,7 +679,9 @@ proxy-groups:
       - "土耳其01"
       - "尼日利亚01"
       - "尼日利亚02"
+      - "尼日利亚03"
       - "吉尔吉斯斯坦01"
+      - "冰岛01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
