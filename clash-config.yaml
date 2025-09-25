@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（新增“香港X”）——
+# ——节点列表（新增“俄罗斯02”）——
 proxies:
   - name: "美国01"
     type: vless
@@ -689,6 +689,23 @@ proxies:
       short-id: "797036"
       spider-x: "/"
 
+  # ——新增：俄罗斯02——
+  - name: "俄罗斯02"
+    type: vless
+    server: green.jiangniao.de
+    port: 26571
+    uuid: 9b4eaa0e-af08-4d9f-b2ed-7b6238776658
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: yahoo.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "tvUxHKatU4prIiyGUsqfSDd0I5Iwpe7w6UMul-yzCDo"
+      short-id: "90"
+      spider-x: "/"
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -722,6 +739,7 @@ proxy-groups:
       - "芬兰01"
       - "乌克兰01"
       - "俄罗斯01"
+      - "俄罗斯02"
       - "墨西哥01"
       - "墨西哥02"
       - "墨西哥03"
