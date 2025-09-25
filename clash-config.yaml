@@ -194,7 +194,23 @@ proxies:
       public-key: "Wg6dx0zz4jF_ZLL7dtbAf32J2l_3KXGeFtbkdC0VXyY"
       short-id: "9bf1a5d26dc0e2c4"
       spider-x: /
-
+  
+  - name: "日本04"
+    type: vless
+    server: green.jiangniao.de
+    port: 51790
+    uuid: 1b69afb7-9f0a-4e6c-9a4b-1fcf7621b0be
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "XJa0ZYOvtfwRz7aF8GprVrnEjc4S1rokGFhc-tI1YFk"
+      short-id: "02c40852"
+      spider-x: "/"
+ 
   - name: "新加坡01"
     type: vless
     server: rfc.jiangniao.de
@@ -687,6 +703,7 @@ proxy-groups:
       - "日本01"
       - "日本02"
       - "日本03"
+      - "日本04"
       - "新加坡01"
       - "新加坡02"
       - "台湾01"
