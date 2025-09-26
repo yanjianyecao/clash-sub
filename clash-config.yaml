@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（新增“俄罗斯02”）——
+# ——节点列表（含新增“日本05”、“俄罗斯02”）——
 proxies:
   - name: "美国01"
     type: vless
@@ -209,6 +209,23 @@ proxies:
     reality-opts:
       public-key: "XJa0ZYOvtfwRz7aF8GprVrnEjc4S1rokGFhc-tI1YFk"
       short-id: "02c40852"
+      spider-x: "/"
+
+  # ——新增：日本05——
+  - name: "日本05"
+    type: vless
+    server: green.jiangniao.de
+    port: 14543
+    uuid: d5907166-d630-4d01-82e3-5eb182a3edbd
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "0MNe1LBU8ymWp_1DQ0QazYRwxqFPKP2U_3h6-ymdwy4"
+      short-id: "f86eb3"
       spider-x: "/"
  
   - name: "新加坡01"
@@ -689,7 +706,6 @@ proxies:
       short-id: "797036"
       spider-x: "/"
 
-  # ——新增：俄罗斯02——
   - name: "俄罗斯02"
     type: vless
     server: green.jiangniao.de
@@ -721,6 +737,7 @@ proxy-groups:
       - "日本02"
       - "日本03"
       - "日本04"
+      - "日本05"
       - "新加坡01"
       - "新加坡02"
       - "台湾01"
