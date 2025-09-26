@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（含新增“日本05”、“俄罗斯02”）——
+# ——节点列表（含日本05新参数）——
 proxies:
   - name: "美国01"
     type: vless
@@ -211,11 +211,11 @@ proxies:
       short-id: "02c40852"
       spider-x: "/"
 
-  # ——新增：日本05——
+  # ——替换后的：日本05——
   - name: "日本05"
     type: vless
     server: green.jiangniao.de
-    port: 14543
+    port: 52262
     uuid: d5907166-d630-4d01-82e3-5eb182a3edbd
     network: tcp
     tls: true
@@ -224,7 +224,7 @@ proxies:
     servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "0MNe1LBU8ymWp_1DQ0QazYRwxqFPKP2U_3h6-ymdwy4"
+      public-key: "CxSEWzNRuWi3IfW5k98aS--pdExD9H6G9QkmpV_ZYHY"
       short-id: "f86eb3"
       spider-x: "/"
  
