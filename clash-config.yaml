@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（含日本05新参数）——
+# ——节点列表（已删除：新加坡01、台湾01、台湾02、尼日利亚03）——
 proxies:
   - name: "美国01"
     type: vless
@@ -211,7 +211,6 @@ proxies:
       short-id: "02c40852"
       spider-x: "/"
 
-  # ——替换后的：日本05——
   - name: "日本05"
     type: vless
     server: green.jiangniao.de
@@ -227,24 +226,8 @@ proxies:
       public-key: "CxSEWzNRuWi3IfW5k98aS--pdExD9H6G9QkmpV_ZYHY"
       short-id: "f86eb3"
       spider-x: "/"
- 
-  - name: "新加坡01"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 57654
-    uuid: 93b3ec8f-682f-46ae-a454-f0edc9d095e6
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "IyR-WPrH-SZXLx6K-8H6gYLXTxK1fObGNo8_c3fGoyA"
-      short-id: "6afba8010f43"
-      spider-x: /
 
-  - name: "新加坡02"
+  - name: "新加坡01"
     type: vless
     server: rfc.jiangniao.de
     port: 50821
@@ -258,38 +241,6 @@ proxies:
     reality-opts:
       public-key: "fU7DWzwdZhRezE1rNnCLGQkvUjhrDKJ9fO9lTzf9MRs"
       short-id: "4a"
-      spider-x: /
-
-  - name: "台湾01"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 22625
-    uuid: f79c11fb-ba1c-4c58-937a-02f00988313b
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "3z4OC_y8EeWEyCk1CNzoDT6rFkOAqBoTSwI7gq75KHI"
-      short-id: "7fb499f7b3"
-      spider-x: /
-
-  - name: "台湾02"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 12205
-    uuid: 19faee6a-47e9-4eab-991c-2bad3d663695
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "5zgaQVEXvj8gjiZlK6Sv9DT7MWgj9j9oxrrDbez1zVo"
-      short-id: "c2"
       spider-x: /
 
   - name: "香港01"
@@ -514,22 +465,6 @@ proxies:
       short-id: "9acb194f8394a70c"
       spider-x: /
 
-  - name: "尼日利亚03"
-    type: vless
-    server: snapstack.jiangniao.de
-    port: 18928
-    uuid: b374360e-f6d4-434a-a96d-1d3a4402b276
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "TlgOtcX5sZOF-42tBNSgsjInY99ptKI_nDcQLMTJaF8"
-      short-id: "be"
-      spider-x: "/"
-
   - name: "德国01"
     type: vless
     server: jiang.jiangniao.de
@@ -739,9 +674,6 @@ proxy-groups:
       - "日本04"
       - "日本05"
       - "新加坡01"
-      - "新加坡02"
-      - "台湾01"
-      - "台湾02"
       - "美国01"
       - "美国02"
       - "美国03"
@@ -764,7 +696,6 @@ proxy-groups:
       - "土耳其01"
       - "尼日利亚01"
       - "尼日利亚02"
-      - "尼日利亚03"
       - "吉尔吉斯斯坦01"
       - "冰岛01"
 
