@@ -289,7 +289,23 @@ proxies:
       public-key: "d1dzvm7d9JN2JunFIU0-cXH6ooS6VT-fUi_Z0G2Tfys"
       short-id: "ce9c32d59c9c8189"
       spider-x: /
-
+      
+  - name: "香港03（RFC）"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 47902
+    uuid: e1399ad8-3e06-47f4-957e-9b81592210ad
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "YL6YPweNQPotVbSO9tj3pnJc_ZyAq43WBIHiSzJNV3U"
+      short-id: "91a90ab02da3d300"
+      spider-x: "/"
+      
   - name: "香港04"
     type: vless
     server: rfc.jiangniao.de
@@ -665,6 +681,7 @@ proxy-groups:
       - "香港01"
       - "香港02"
       - "香港03"
+      - "香港03（RFC）"
       - "香港04"
       - "香港05"
       - "香港X"
