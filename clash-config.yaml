@@ -449,11 +449,11 @@ proxies:
       short-id: "4a9c954f51a83119"
       spider-x: /
 
-  - name: "尼日利亚02"
+  - name: "荷兰01"
     type: vless
-    server: jiang.jiangniao.de
-    port: 32506
-    uuid: 49f43584-8742-43d0-9ea6-e38e0ce772b4
+    server: nl.jiangniao.de
+    port: 30383
+    uuid: 49a84f88-9c07-4d87-bbe8-066f720cc98b
     network: tcp
     tls: true
     udp: true
@@ -461,9 +461,9 @@ proxies:
     servername: yahoo.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "N2D2KLCsykq0fsUUwjrKvHdUo5b5SUfiLbXmSkJcfx8"
-      short-id: "9acb194f8394a70c"
-      spider-x: /
+      public-key: "SQzMdT0zNEo_hoEjkgwYxZkIQ7OKE1SCz1lRiwPpmwY"
+      short-id: "84"
+      spider-x: "/"
 
   - name: "德国01"
     type: vless
@@ -695,7 +695,7 @@ proxy-groups:
       - "墨西哥04"
       - "土耳其01"
       - "尼日利亚01"
-      - "尼日利亚02"
+      - "荷兰01"
       - "吉尔吉斯斯坦01"
       - "冰岛01"
 
