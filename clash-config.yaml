@@ -197,9 +197,9 @@ proxies:
 
   - name: "日本05"
     type: vless
-    server: green.jiangniao.de
-    port: 52262
-    uuid: d5907166-d630-4d01-82e3-5eb182a3edbd
+    server: gomami.jiangniao.de
+    port: 17879
+    uuid: 40ee69a1-c20d-46d4-ad40-b8aeb0a250f8
     network: tcp
     tls: true
     udp: true
@@ -207,8 +207,8 @@ proxies:
     servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "CxSEWzNRuWi3IfW5k98aS--pdExD9H6G9QkmpV_ZYHY"
-      short-id: "f86eb3"
+      public-key: "o0_ylMwYlfZQYSCSe14pbn1sXifirIzpXas0MTrztg8"
+      short-id: "48"
       spider-x: "/"
 
   
