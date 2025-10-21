@@ -568,9 +568,9 @@ proxies:
 
   - name: "芬兰01"
     type: vless
-    server: rfc.jiangniao.de
-    port: 18782
-    uuid: cb80c118-a2f9-47c8-9240-e9f84f0fb337
+    server: nl.jiangniao.de
+    port: 21445
+    uuid: 75f436d9-b123-440a-b4b3-04d50490d05a
     network: tcp
     tls: true
     udp: true
@@ -578,15 +578,15 @@ proxies:
     servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "8azH5cnew4LV8UT_FY10GaH6yX4KqqlYZ4GPKtzD2Rg"
-      short-id: "ba"
+      public-key: "Vxx0cEAxavl5IB9mgdGybHWWFU5z5HUye2XR2UTkSgQ"
+      short-id: "e2c1da25"
       spider-x: "/"
 
   - name: "乌克兰01"
     type: vless
-    server: rfc.jiangniao.de
-    port: 24590
-    uuid: fc06fb02-ef7c-4608-a363-2d2314043bd0
+    server: nl.jiangniao.de
+    port: 29887
+    uuid: 6ff59a2c-12f9-4929-b82e-b7a23b642e04
     network: tcp
     tls: true
     udp: true
@@ -594,8 +594,8 @@ proxies:
     servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "Tp7HWnEMbVR46uljXL7JnV_Iu9KRPByEvs5DcdenC2o"
-      short-id: "48fbd12319"
+      public-key: "fxovmdbgZ2N6kxz47ciMu1AnEP0fK9UL7oy8RQ40eTE"
+      short-id: "203e5451"
       spider-x: "/"
 
   - name: "新西兰01"
@@ -648,9 +648,9 @@ proxies:
 
   - name: "俄罗斯01"
     type: vless
-    server: rfc.jiangniao.de
-    port: 22385
-    uuid: 3b0958a8-b9bf-4a8b-b97d-19b993f66eb0
+    server: nl.jiangniao.de
+    port: 32676
+    uuid: e89ee658-9f02-40f8-a8de-80566fe340bc
     network: tcp
     tls: true
     udp: true
@@ -658,8 +658,8 @@ proxies:
     servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "OUGQpGvMpViTmubP6jRqsgqJ-RJ_n-CEcc6zZI9JH1g"
-      short-id: "797036"
+      public-key: "Q6k0T38L0p6nfqWaLWU1qrsUYf5bJc-RmMaWDkvavx4"
+      short-id: "dc"
       spider-x: "/"
 
   - name: "俄罗斯02"
