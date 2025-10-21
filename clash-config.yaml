@@ -83,7 +83,7 @@ dns:
     - "stun.l.google.com"
     - "download.windowsupdate.com"
 
-# ——节点列表（已删除：新加坡01、台湾01、台湾02、尼日利亚03）——
+# ——节点列表——
 proxies:
   - name: "美国01"
     type: vless
@@ -94,11 +94,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "4f-7xFlaZty0ZhYib5NHTvnxt22m7LaRUkSJbthWMAM"
       short-id: "5247b7"
+      spider-x: "/"
 
   - name: "美国02"
     type: vless
@@ -109,12 +110,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "KL9NC2B3k5E7IfghGcA9ocF-7MdvuAgdPR7Zj4ljSlI"
       short-id: "954ae509e86e10"
-      spider-x: /
+      spider-x: "/"
 
   - name: "美国03"
     type: vless
@@ -125,7 +126,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "7pEGJXrnTqrq4BvWCod1TLgCu99W1RENDrvinvdRaW4"
@@ -141,7 +142,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "6ahd-83CxsUfdvw6uiTbVGYWcjFOxDXOtTOrjzFde1A"
@@ -157,11 +158,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw"
       short-id: "ec2c02bced"
+      spider-x: "/"
 
   - name: "日本03"
     type: vless
@@ -172,13 +174,13 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "sOX026sVJ2dAQqG2B3YCmspTcx5oB58ILxX_zqyPK10"
       short-id: "37b312"
       spider-x: "/"
-  
+
   - name: "日本04"
     type: vless
     server: green.jiangniao.de
@@ -188,7 +190,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "XJa0ZYOvtfwRz7aF8GprVrnEjc4S1rokGFhc-tI1YFk"
@@ -204,14 +206,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "o0_ylMwYlfZQYSCSe14pbn1sXifirIzpXas0MTrztg8"
       short-id: "48"
       spider-x: "/"
-
-  
 
   - name: "新加坡01"
     type: vless
@@ -222,12 +222,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "fU7DWzwdZhRezE1rNnCLGQkvUjhrDKJ9fO9lTzf9MRs"
       short-id: "4a"
-      spider-x: /
+      spider-x: "/"
 
   - name: "香港01"
     type: vless
@@ -238,11 +238,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI"
       short-id: "8332"
+      spider-x: "/"
 
   - name: "香港02"
     type: vless
@@ -253,12 +254,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "mFLxuM5neHOj_JiAaSXzKhQHNBjJOdMrcvi0nBZvoHg"
       short-id: "ff6c1c7939"
-      spider-x: /
+      spider-x: "/"
 
   - name: "香港03"
     type: vless
@@ -269,13 +270,13 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "d1dzvm7d9JN2JunFIU0-cXH6ooS6VT-fUi_Z0G2Tfys"
       short-id: "ce9c32d59c9c8189"
-      spider-x: /
-      
+      spider-x: "/"
+
   - name: "香港03（RFC）"
     type: vless
     server: rfc.jiangniao.de
@@ -285,13 +286,13 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "YL6YPweNQPotVbSO9tj3pnJc_ZyAq43WBIHiSzJNV3U"
       short-id: "91a90ab02da3d300"
       spider-x: "/"
-      
+
   - name: "香港04"
     type: vless
     server: rfc.jiangniao.de
@@ -301,12 +302,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "qfH78UdGFMqCFfdPpHgHI5szzu2KXrVpxoyG12lZono"
       short-id: "a4"
-      spider-x: /
+      spider-x: "/"
 
   - name: "香港05"
     type: vless
@@ -317,12 +318,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "J2b48DFltcG4Eg4ZUlzoi76Mvx20U_kLhKnUyFZKXyA"
       short-id: "286927"
-      spider-x: /
+      spider-x: "/"
 
   - name: "香港X"
     type: vless
@@ -333,7 +334,7 @@ proxies:
     tls: true
     udp: false
     flow: "xtls-rprx-vision"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "1OGj_Ab2uxPN0HMe29mgjuXeGJqqPZCuUSUWVU1h4mE"
@@ -349,12 +350,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "Wi_dye6vy6jr4iEBPHJKvBCf-bXflSlp_AI84tuQfzE"
       short-id: "7c485f0d"
-      spider-x: /
+      spider-x: "/"
 
   - name: "土耳其01"
     type: vless
@@ -365,12 +366,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM"
       short-id: "7388efc99b645c49"
-      spider-x: /
+      spider-x: "/"
 
   - name: "墨西哥01"
     type: vless
@@ -381,12 +382,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "6baH2z3cSHXyNF-y60uOu15VRrHIA1s0w-c7DXvNLG4"
       short-id: "e5d928499470"
-      spider-x: /
+      spider-x: "/"
 
   - name: "墨西哥02"
     type: vless
@@ -397,11 +398,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "zIIPhsd4pP9omVPxtUbusaJq9UcY7artFMY70MLQiWg"
       short-id: "6f110ee0d9fd"
+      spider-x: "/"
 
   - name: "墨西哥03"
     type: vless
@@ -412,12 +414,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "lDSUkgWuvxEQ1RzMbuwGCqdX7bn3uDetAYJmP4HGhXA"
       short-id: "c5475819"
-      spider-x: /
+      spider-x: "/"
 
   - name: "墨西哥04"
     type: vless
@@ -428,12 +430,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "dDrx6x-HWghQs3x_s5bVW8VICdhhACVYTThlHScWlyI"
       short-id: "9d3ec8"
-      spider-x: /
+      spider-x: "/"
 
   - name: "墨西哥05"
     type: vless
@@ -444,7 +446,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "uInXYi-6Bd6C061wSjWpFZTaE8Hd1fS3MBsU57geT0I"
@@ -460,7 +462,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "l9y_VNGHADyIsENlPgZxkhGPy8u3YzIJKC73GD8fuS4"
@@ -476,12 +478,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko"
       short-id: "4a9c954f51a83119"
-      spider-x: /
+      spider-x: "/"
 
   - name: "荷兰01"
     type: vless
@@ -492,7 +494,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "SQzMdT0zNEo_hoEjkgwYxZkIQ7OKE1SCz1lRiwPpmwY"
@@ -508,12 +510,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "gpOVDq28Vszg_aOf5TJl4eNwSwk_nQpDuJhq5MPJEX8"
       short-id: "12e0c546c0987b10"
-      spider-x: /
+      spider-x: "/"
 
   - name: "德国02"
     type: vless
@@ -524,7 +526,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "zz63GUGkBDMUvZNzEY6ugD6XYuNT0TIe-NefzNhqEhw"
@@ -540,12 +542,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "CwOikz2Soyfs5YVZBuDMdKRjZ7IfAPWQr_prrvh38DM"
       short-id: "30e09630b2b7af"
-      spider-x: /
+      spider-x: "/"
 
   - name: "德国家宽01"
     type: vless
@@ -556,7 +558,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "V3C6W3hKfwca-5Hi0MHCZSnkF-a9B45UjxqoklhWHmk"
@@ -572,7 +574,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "qI2y3py3S4HEbR0kMSN2VypO3Z6R4LHVJY8zNa35wEU"
@@ -588,12 +590,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "8azH5cnew4LV8UT_FY10GaH6yX4KqqlYZ4GPKtzD2Rg"
       short-id: "ba"
-      spider-x: /
+      spider-x: "/"
 
   - name: "乌克兰01"
     type: vless
@@ -604,12 +606,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "Tp7HWnEMbVR46uljXL7JnV_Iu9KRPByEvs5DcdenC2o"
       short-id: "48fbd12319"
-      spider-x: /
+      spider-x: "/"
 
   - name: "新西兰01"
     type: vless
@@ -620,12 +622,12 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "4CeXM3VjkWtldeRvy23sPNTYseiCj8MmpSxwdETWPBQ"
       short-id: "af"
-      spider-x: /
+      spider-x: "/"
 
   - name: "吉尔吉斯坦01"
     type: vless
@@ -636,7 +638,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "szzXb530rQl16hT0dFVHQ184i5aRO5dTWPS8s_n9UQc"
@@ -652,7 +654,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "P3OBzOmW6Y4euP8GsgN9vB_MnbU1s3784DcZIBAhwgI"
@@ -668,7 +670,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "OUGQpGvMpViTmubP6jRqsgqJ-RJ_n-CEcc6zZI9JH1g"
@@ -684,7 +686,7 @@ proxies:
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
       public-key: "tvUxHKatU4prIiyGUsqfSDd0I5Iwpe7w6UMul-yzCDo"
