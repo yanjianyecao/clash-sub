@@ -165,19 +165,19 @@ proxies:
 
   - name: "日本03"
     type: vless
-    server: rfc.jiangniao.de
-    port: 40669
-    uuid: 8de8923b-85c0-4daa-a4a9-d2182295447e
+    server: gomami.jiangniao.de
+    port: 57460
+    uuid: a069cca6-d6e1-423b-9901-5ebe12766253
     network: tcp
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "Wg6dx0zz4jF_ZLL7dtbAf32J2l_3KXGeFtbkdC0VXyY"
-      short-id: "9bf1a5d26dc0e2c4"
-      spider-x: /
+      public-key: "sOX026sVJ2dAQqG2B3YCmspTcx5oB58ILxX_zqyPK10"
+      short-id: "37b312"
+      spider-x: "/"
   
   - name: "日本04"
     type: vless
