@@ -134,6 +134,22 @@ proxies:
 
   - name: "日本01"
     type: vless
+    server: gomami.jiangniao.de
+    port: 20370
+    uuid: 90483522-652b-47a8-8e25-9e6f15e00f72
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "6ahd-83CxsUfdvw6uiTbVGYWcjFOxDXOtTOrjzFde1A"
+      short-id: "4d2e2df44042"
+      spider-x: "/"
+
+  - name: "日本02"
+    type: vless
     server: jiang1314.jiangniao44.top
     port: 32786
     uuid: 54e6dcc1-9e32-4147-81a0-6e70069a41ba
@@ -146,22 +162,6 @@ proxies:
     reality-opts:
       public-key: "2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw"
       short-id: "ec2c02bced"
-
-  - name: "日本02"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 42122
-    uuid: 9e61d90e-c387-4b92-a6da-4c1b92027bd7
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "XdWaJDqRHBcPme2NXM_s6zKhvRuRaTjYw27gbFLCzW0"
-      short-id: "3279de5b00f2"
-      spider-x: /
 
   - name: "日本03"
     type: vless
@@ -211,21 +211,7 @@ proxies:
       short-id: "f86eb3"
       spider-x: "/"
 
-  - name: "日本06"
-    type: vless
-    server: gomami.jiangniao.de
-    port: 20370
-    uuid: 90483522-652b-47a8-8e25-9e6f15e00f72
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: icloud.com
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "6ahd-83CxsUfdvw6uiTbVGYWcjFOxDXOtTOrjzFde1A"
-      short-id: "4d2e2df44042"
-      spider-x: "/"
+  
 
   - name: "新加坡01"
     type: vless
@@ -722,7 +708,6 @@ proxy-groups:
       - "日本03"
       - "日本04"
       - "日本05"
-      - "日本06"
       - "新加坡01"
       - "美国01"
       - "美国02"
