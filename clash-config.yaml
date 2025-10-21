@@ -152,17 +152,17 @@ proxies:
   - name: "日本02"
     type: vless
     server: jiang1314.jiangniao44.top
-    port: 32786
-    uuid: 54e6dcc1-9e32-4147-81a0-6e70069a41ba
+    port: 17069
+    uuid: c2766b94-fd4b-42ae-83c9-5fb33bf4e040
     network: tcp
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "2LEyuwr6KgalqZfZsUjq1qQBPSSDPJdu6sOxFhrCaxw"
-      short-id: "ec2c02bced"
+      public-key: "afrH0HGqS4Z4LZEOTz6MvCLrh-py7MdW60dhQmkZV2A"
+      short-id: "8fd8ce6c00813c"
       spider-x: "/"
 
   - name: "日本03"
