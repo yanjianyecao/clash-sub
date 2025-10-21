@@ -678,6 +678,22 @@ proxies:
       short-id: "90"
       spider-x: "/"
 
+  - name: "罗马尼亚01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 32043
+    uuid: 985f9da8-5091-47ba-8bf1-bb33c9c0109c
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+    public-key: "CRNmH2-XlYXqgH7ZnWGZ-Qv31H5CK8X3avTouTKBFGE"
+    short-id: "f7171f"
+    spider-x: "/"
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -720,6 +736,7 @@ proxy-groups:
       - "荷兰01"
       - "吉尔吉斯坦01"
       - "冰岛01"
+      - "罗马尼亚01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
