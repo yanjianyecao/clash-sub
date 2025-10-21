@@ -627,11 +627,11 @@ proxies:
       short-id: "af"
       spider-x: /
 
-  - name: "吉尔吉斯斯坦01"
+  - name: "吉尔吉斯坦01"
     type: vless
-    server: jiang1314.jiangniao44.top
-    port: 19168
-    uuid: 32cff7d0-8cc8-43fb-83c7-3f8db04d63c8
+    server: nl.jiangniao.de
+    port: 17714
+    uuid: 9b69423f-f669-4a84-bd83-d25faccb84e9
     network: tcp
     tls: true
     udp: true
@@ -639,8 +639,8 @@ proxies:
     servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "Jytt3P7bc6AQI1Swl9kGR1VejhmVQmepx1kU6OCafTk"
-      short-id: "61"
+      public-key: "PHxTjDI2cu7C8gZZjkrCYMq9WzhfFwGF4zupkRYljRI"
+      short-id: "608594"
       spider-x: "/"
 
   - name: "冰岛01"
