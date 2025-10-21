@@ -449,6 +449,38 @@ proxies:
       short-id: "9d3ec8"
       spider-x: /
 
+  - name: "墨西哥05"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 12852
+    uuid: e96ab706-0aa6-4ff6-820a-6f3549dd3319
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "uInXYi-6Bd6C061wSjWpFZTaE8Hd1fS3MBsU57geT0I"
+      short-id: "28fcba0ec25e"
+      spider-x: "/"
+
+  - name: "墨西哥06"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 44779
+    uuid: 6ae3ada1-49c6-48ab-8cd3-53b63ae2e9f1
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: icloud.com
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "l9y_VNGHADyIsENlPgZxkhGPy8u3YzIJKC73GD8fuS4"
+      short-id: "6eb946ae72a615"
+      spider-x: "/"
+
   - name: "尼日利亚01"
     type: vless
     server: jiang.jiangniao.de
@@ -710,6 +742,8 @@ proxy-groups:
       - "墨西哥02"
       - "墨西哥03"
       - "墨西哥04"
+      - "墨西哥05"
+      - "墨西哥06"
       - "土耳其01"
       - "尼日利亚01"
       - "荷兰01"
