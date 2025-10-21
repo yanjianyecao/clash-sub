@@ -485,6 +485,22 @@ proxies:
       short-id: "4a9c954f51a83119"
       spider-x: "/"
 
+  - name: "尼日利亚02"
+    type: vless
+    server: nl.jiangniao.de
+    port: 20041
+    uuid: 9edaf9dc-ad9f-45dd-a9a6-0607b319ce95
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "iuzReYVzAP_fsSv_AZZo-kkUx4HWg-u0GjphpiNzC2w"
+      short-id: "199eb1a29e"
+      spider-x: "/"
+
   - name: "荷兰01"
     type: vless
     server: nl.jiangniao.de
@@ -690,9 +706,9 @@ proxies:
     servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-    public-key: "CRNmH2-XlYXqgH7ZnWGZ-Qv31H5CK8X3avTouTKBFGE"
-    short-id: "f7171f"
-    spider-x: "/"
+      public-key: "CRNmH2-XlYXqgH7ZnWGZ-Qv31H5CK8X3avTouTKBFGE"
+      short-id: "f7171f"
+      spider-x: "/"
 
 proxy-groups:
   - name: "Proxy"
@@ -733,6 +749,7 @@ proxy-groups:
       - "墨西哥06"
       - "土耳其01"
       - "尼日利亚01"
+      - "尼日利亚02"
       - "荷兰01"
       - "吉尔吉斯坦01"
       - "冰岛01"
