@@ -563,19 +563,19 @@ proxies:
 
   - name: "德国家宽01"
     type: vless
-    server: jiang.jiangniao.de
-    port: 54084
-    uuid: 281c6b35-4633-4153-9c8b-581a7ad0ac69
+    server: nl.jiangniao.de
+    port: 39174
+    uuid: b9b4090c-251e-4d3c-84bf-8e4ba26831dc
     network: tcp
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: yahoo.com
+    servername: icloud.com
     client-fingerprint: chrome
     reality-opts:
-      public-key: "b6EZJ9PO1Y3WGy3f88s1NZYfCOoaYuI62WrHqxjOqCI"
-      short-id: "ff5881b5"
-      spider-x: /
+      public-key: "V3C6W3hKfwca-5Hi0MHCZSnkF-a9B45UjxqoklhWHmk"
+      short-id: "b6"
+      spider-x: "/"
 
   - name: "英国01"
     type: vless
