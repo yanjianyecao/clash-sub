@@ -501,23 +501,8 @@ proxies:
       short-id: "84"
       spider-x: "/"
 
-  - name: "德国01"
-    type: vless
-    server: jiang.jiangniao.de
-    port: 21361
-    uuid: e8216fcb-2a03-4847-9290-eeb8790bc51f
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "gpOVDq28Vszg_aOf5TJl4eNwSwk_nQpDuJhq5MPJEX8"
-      short-id: "12e0c546c0987b10"
-      spider-x: "/"
 
-  - name: "德国02"
+  - name: "德国01"
     type: vless
     server: snapstack.jiangniao.de
     port: 11873
@@ -718,7 +703,6 @@ proxy-groups:
       - "新西兰01"
       - "美国家宽01"
       - "德国01"
-      - "德国02"
       - "德国家宽01"
       - "英国01"
       - "芬兰01"
