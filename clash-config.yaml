@@ -727,9 +727,9 @@ proxies:
 
   - name: "俄罗斯02"
     type: vless
-    server: green.jiangniao.de
-    port: 26571
-    uuid: 9b4eaa0e-af08-4d9f-b2ed-7b6238776658
+    server: nl.jiangniao.de
+    port: 10462
+    uuid: 2902a911-7c88-40bb-b402-685336411f28
     network: tcp
     tls: true
     udp: true
@@ -737,8 +737,8 @@ proxies:
     servername: "yahoo.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "tvUxHKatU4prIiyGUsqfSDd0I5Iwpe7w6UMul-yzCDo"
-      short-id: "90"
+      public-key: "0MpxYvmHxscw-F2ccQCowPXBmPMYrGps4YGUGJznZVA"
+      short-id: "a8f125e0"
       spider-x: "/"
 
   - name: "罗马尼亚01"
@@ -821,6 +821,22 @@ proxies:
       short-id: "1cc0f726a6817a23"
       spider-x: "/"
 
+  - name: "澳大利亚01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 44510
+    uuid: 6e344749-6686-4a04-aa0a-4f2392a03e3a
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "2Gt0VJ8dKb8w7J-QOXX5n7caL-yPUZvjsUjJkqqHcRs"
+      short-id: "b727e254c216"
+      spider-x: "/"
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -872,6 +888,7 @@ proxy-groups:
       - "意大利01"
       - "加拿大01"
       - "法国01"
+      - "澳大利亚01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
