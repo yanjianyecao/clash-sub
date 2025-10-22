@@ -581,6 +581,22 @@ proxies:
       short-id: "26365d694c"
       spider-x: "/"
 
+  - name: "哈萨克斯坦家宽01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 57817
+    uuid: c5ac0762-a1e2-4c81-87a7-ac3f51cbdac0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "sFc2VRgAQt1GxaQcYdwzrXhEk5iIYjFAGaY2Pe8PtxU"
+      short-id: "be"
+      spider-x: "/"
+
   - name: "英国01"
     type: vless
     server: nl.jiangniao.de
@@ -741,6 +757,70 @@ proxies:
       short-id: "f7171f"
       spider-x: "/"
 
+  - name: "塞浦路斯01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 17215
+    uuid: 38660a22-82af-4cda-a56a-648af37291ef
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "-fAs-GReDQ-sMvrSk6d9Nw0t-g4xbtGUH0HrepIGZEQ"
+      short-id: "cf"
+      spider-x: "/"
+
+  - name: "意大利01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 16900
+    uuid: 6cadfa7b-b678-4f07-95f9-f03a5e5de072
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "XsqvxgwkA1VrbdQmGcHHAkAvMZ5kndIEW0LDY_VatVc"
+      short-id: "38eff2fe8478abff"
+      spider-x: "/"
+
+  - name: "加拿大01"
+    type: vless
+    server: jiang.jiangniao.de
+    port: 55322
+    uuid: 1de3cd96-b790-4a08-8cfa-d88f0558081e
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "bbP82JGAMLowcT8RCWC4rFB4oYE2W7hZzp2ZwgZfUyw"
+      short-id: "cf37"
+      spider-x: "/"
+
+  - name: "法国01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 15965
+    uuid: 1663aacd-551b-4d1b-aafe-e60221b2fb80
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "5wHGHPOL7420cLnzo4Y-rCiX1oO5MhhsyXTwooudv3M"
+      short-id: "1cc0f726a6817a23"
+      spider-x: "/"
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -768,6 +848,7 @@ proxy-groups:
       - "德国家宽01"
       - "越南家宽01"
       - "波兰家宽01"
+      - "哈萨克斯坦家宽01"
       - "英国01"
       - "芬兰01"
       - "乌克兰01"
@@ -787,6 +868,10 @@ proxy-groups:
       - "吉尔吉斯坦01"
       - "冰岛01"
       - "罗马尼亚01"
+      - "塞浦路斯01"
+      - "意大利01"
+      - "加拿大01"
+      - "法国01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
