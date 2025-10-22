@@ -229,39 +229,8 @@ proxies:
       short-id: "4a"
       spider-x: "/"
 
+
   - name: "香港01"
-    type: vless
-    server: niao.jiangniao44.top
-    port: 56079
-    uuid: d2e6f717-0cdf-44f5-81e1-ad7f969ed903
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "8txY8epXE1T3O7H6-NVxleE_-J4dCVf4HSP6zdsx4TI"
-      short-id: "8332"
-      spider-x: "/"
-
-  - name: "香港02"
-    type: vless
-    server: cnf.jiangniao.de
-    port: 14339
-    uuid: 305b46c8-62c5-4a5f-8eca-49696504b4c9
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "mFLxuM5neHOj_JiAaSXzKhQHNBjJOdMrcvi0nBZvoHg"
-      short-id: "ff6c1c7939"
-      spider-x: "/"
-
-  - name: "香港03"
     type: vless
     server: rfc.jiangniao.de
     port: 14967
@@ -277,53 +246,6 @@ proxies:
       short-id: "ce9c32d59c9c8189"
       spider-x: "/"
 
-  - name: "香港03（RFC）"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 47902
-    uuid: e1399ad8-3e06-47f4-957e-9b81592210ad
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision"
-    servername: "icloud.com"
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "YL6YPweNQPotVbSO9tj3pnJc_ZyAq43WBIHiSzJNV3U"
-      short-id: "91a90ab02da3d300"
-      spider-x: "/"
-
-  - name: "香港04"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 49624
-    uuid: 6245f873-c14d-4cc9-895c-5e1816a8debb
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "qfH78UdGFMqCFfdPpHgHI5szzu2KXrVpxoyG12lZono"
-      short-id: "a4"
-      spider-x: "/"
-
-  - name: "香港05"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 27277
-    uuid: 4564fd83-b46f-4781-ba74-fd2b6a29875c
-    network: tcp
-    tls: true
-    udp: true
-    flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "J2b48DFltcG4Eg4ZUlzoi76Mvx20U_kLhKnUyFZKXyA"
-      short-id: "286927"
-      spider-x: "/"
 
   - name: "印度01"
     type: vless
@@ -843,11 +765,6 @@ proxy-groups:
     proxies:
       - DIRECT
       - "香港01"
-      - "香港02"
-      - "香港03"
-      - "香港03（RFC）"
-      - "香港04"
-      - "香港05"
       - "日本01"
       - "日本02"
       - "日本03"
