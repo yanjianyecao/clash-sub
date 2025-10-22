@@ -325,22 +325,6 @@ proxies:
       short-id: "286927"
       spider-x: "/"
 
-  - name: "香港X"
-    type: vless
-    server: rfc.jiangniao.de
-    port: 47372
-    uuid: 2f18157f-361e-4da9-a43d-abea314f82a8
-    network: tcp
-    tls: true
-    udp: false
-    flow: "xtls-rprx-vision"
-    servername: "icloud.com"
-    client-fingerprint: chrome
-    reality-opts:
-      public-key: "1OGj_Ab2uxPN0HMe29mgjuXeGJqqPZCuUSUWVU1h4mE"
-      short-id: "a48c6562f9f96d35"
-      spider-x: "/"
-
   - name: "印度01"
     type: vless
     server: rfc.jiangniao.de
@@ -517,7 +501,6 @@ proxies:
       short-id: "84"
       spider-x: "/"
 
-
   - name: "德国01"
     type: vless
     server: snapstack.jiangniao.de
@@ -564,6 +547,22 @@ proxies:
     reality-opts:
       public-key: "V3C6W3hKfwca-5Hi0MHCZSnkF-a9B45UjxqoklhWHmk"
       short-id: "b6"
+      spider-x: "/"
+
+  - name: "越南家宽01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 11966
+    uuid: 6790849a-b7f2-4e95-8fef-e30da48b4398
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "VstiTmyiCfs5M3zxCiHBCcFbkp43i1GcCt157c17Ngk"
+      short-id: "f1"
       spider-x: "/"
 
   - name: "英国01"
@@ -721,7 +720,6 @@ proxy-groups:
       - "香港03（RFC）"
       - "香港04"
       - "香港05"
-      - "香港X"
       - "日本01"
       - "日本02"
       - "日本03"
@@ -736,6 +734,7 @@ proxy-groups:
       - "美国家宽01"
       - "德国01"
       - "德国家宽01"
+      - "越南家宽01"
       - "英国01"
       - "芬兰01"
       - "乌克兰01"
