@@ -565,6 +565,22 @@ proxies:
       short-id: "f1"
       spider-x: "/"
 
+  - name: "波兰家宽01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 13520
+    uuid: e6e33606-5766-4cfa-b261-0adaeb2bd948
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "07t4s71TbraH9ONj42HgKrjfg7TTxdfsCHWZQWqkzAc"
+      short-id: "26365d694c"
+      spider-x: "/"
+
   - name: "英国01"
     type: vless
     server: nl.jiangniao.de
@@ -611,6 +627,22 @@ proxies:
     reality-opts:
       public-key: "fxovmdbgZ2N6kxz47ciMu1AnEP0fK9UL7oy8RQ40eTE"
       short-id: "203e5451"
+      spider-x: "/"
+
+  - name: "以色列01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 33552
+    uuid: 0e227f63-0a2f-402a-a2e8-826405ce12a9
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "1JrskUfBXxrnOJTT6l8PCkm_VjQbXHyhrbDzS-rhJXQ"
+      short-id: "c4"
       spider-x: "/"
 
   - name: "新西兰01"
@@ -735,9 +767,11 @@ proxy-groups:
       - "德国01"
       - "德国家宽01"
       - "越南家宽01"
+      - "波兰家宽01"
       - "英国01"
       - "芬兰01"
       - "乌克兰01"
+      - "以色列01"
       - "俄罗斯01"
       - "俄罗斯02"
       - "墨西哥01"
