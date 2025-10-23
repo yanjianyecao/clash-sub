@@ -263,20 +263,20 @@ proxies:
       short-id: "7c485f0d"
       spider-x: "/"
 
-  - name: "土耳其01"
+  - name: "马来西亚01"
     type: vless
-    server: jiang.jiangniao.de
-    port: 27519
-    uuid: 34c19ca4-2f3d-45e0-aa58-24846d80a7fe
+    server: rfc.jiangniao.de
+    port: 31753
+    uuid: d63d1894-d438-44cf-a128-80c270bf935b
     network: tcp
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "kAx8PXXiu9rj_axNsOFT0XwKo2Wg4iaJcJ7AzhYOMyM"
-      short-id: "7388efc99b645c49"
+      public-key: "cBU8HjRB0CQiViq1DbxcMl_BfKpig_LB22EEYkH7608"
+      short-id: "fb533800b4e7152f"
       spider-x: "/"
 
   - name: "墨西哥01"
@@ -794,7 +794,7 @@ proxy-groups:
       - "墨西哥04"
       - "墨西哥05"
       - "墨西哥06"
-      - "土耳其01"
+      - "马来西亚01"
       - "尼日利亚01"
       - "尼日利亚02"
       - "荷兰01"
