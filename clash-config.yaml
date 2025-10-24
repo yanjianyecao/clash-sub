@@ -759,6 +759,86 @@ proxies:
       short-id: "b727e254c216"
       spider-x: "/"
 
+  - name: "捷克01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 28569
+    uuid: ed562ac6-661d-4eba-8149-3761f8622fa0
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "BuO5McahSknlV7XHjg4FD-6gTPAj4GUMgzUyrC9nj08"
+      short-id: "ef3b81"
+      spider-x: "/"
+
+  - name: "爱沙尼亚01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 36518
+    uuid: 28e1c131-61be-49eb-8e72-38126d825b89
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "j3_7OgX4ZjjJUGlyTnJ8CWO4gHUUjsdBXQ41Kdj_R14"
+      short-id: "312343ef60c0"
+      spider-x: "/"
+
+  - name: "匈牙利01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 59819
+    uuid: 979f006e-807d-4487-9d8a-9cc05cf2a556
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "Wid93Tz4J2UdiLHNIYU53ZFkFIVEozH-2h6oozioEDs"
+      short-id: "63604da65c"
+      spider-x: "/"
+
+  - name: "南非01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 12764
+    uuid: 22e3f684-0f75-44ac-ae82-22a0f239a6f1
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "2E022my4rCXA9rKXGWlWntVTr5LRCsTA2Gs_XjUjGiA"
+      short-id: "1d25b7"
+      spider-x: "/"
+
+  - name: "土耳其01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 11605
+    uuid: 78b9b3f8-216e-4c58-8e2e-7112eb42366b
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "3n4MHTmeBjgPWt-3A4dCOuep7mrPeHbWz4Zwn7DrGS0"
+      short-id: "0e74f2"
+      spider-x: "/"
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -806,6 +886,11 @@ proxy-groups:
       - "加拿大01"
       - "法国01"
       - "澳大利亚01"
+      - "捷克01"
+      - "爱沙尼亚01"
+      - "匈牙利01"
+      - "南非01"
+      - "土耳其01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
