@@ -377,18 +377,18 @@ proxies:
 
   - name: "尼日利亚01"
     type: vless
-    server: jiang.jiangniao.de
-    port: 19253
-    uuid: fad9f8a7-13f3-4d42-823a-b7e9f6aff4f5
+    server: nl.jiangniao.de
+    port: 32053
+    uuid: 78e702c6-47bb-498d-bf17-22680202fd73
     network: tcp
     tls: true
     udp: true
     flow: "xtls-rprx-vision-udp443"
-    servername: "yahoo.com"
+    servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "LKZqdbkcQcCmHqSOIlPA8_5sXuWs_GKJJt3S5WW5Jko"
-      short-id: "4a9c954f51a83119"
+      public-key: "L957nPYHN3xLMAklZzjUoZ5BfzV8ckp1l3cH3KXEy1s"
+      short-id: "ecd586"
       spider-x: "/"
 
   - name: "尼日利亚02"
