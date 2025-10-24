@@ -855,6 +855,22 @@ proxies:
       short-id: "5e"
       spider-x: "/"
 
+  - name: "瑞士01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 29975
+    uuid: 1876be5c-cdd3-4b9e-9216-f179226c5154
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "K0ZN51W2Yo4Baf_RNNN7ylFxf8BaYN52MdGNp3MtBQY"
+      short-id: "07332d77"
+      spider-x: "/"
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -908,6 +924,7 @@ proxy-groups:
       - "南非01"
       - "土耳其01"
       - "台湾01"
+      - "瑞士01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
