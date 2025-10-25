@@ -871,6 +871,134 @@ proxies:
       short-id: "07332d77"
       spider-x: "/"
 
+  - name: "孟加拉01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 20201
+    uuid: ad3c80b9-fd4c-47e7-b6fb-6e98248f196b
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "q2UfXhp00316z50PQ3YmpCwzEJQAbFuZvF_2-QyDBEo"
+      short-id: "035b13"
+      spider-x: "/"
+
+  - name: "泰国01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 20121
+    uuid: a382f1d5-9673-4db0-a750-731c3ec41ebb
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "Kf22wj7wYWLRVL91iEfPQ9OBrPuiHSJYriFvnIV4Ung"
+      short-id: "8ddd"
+      spider-x: "/"
+
+  - name: "伊拉克01"
+    type: vless
+    server: rfc.jiangniao.de
+    port: 20071
+    uuid: f84c98dd-e8d4-4b2c-a1f7-2b85ce056441
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "8YaM13IGUMDIbawj1T7IRXOc4puLxcFzi4tsE1lKDFg"
+      short-id: "c29778d3"
+      spider-x: "/"
+
+  - name: "保加利亚01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 20121
+    uuid: 417de2b2-797b-40f5-a3bc-210ca94220fc
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "Eha99oCYOfSwvIeTLdn4MY6ZXMrfOd9Ow-GGxEj48zg"
+      short-id: "d7"
+      spider-x: "/"
+
+  - name: "奥地利01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 20181
+    uuid: 7a702cf4-e2ce-4de0-924e-35d445e56b3e
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "VLPVZPcM0TM5r1TOOe1ZyGmgWL9Oobx4EG_LeFmToWo"
+      short-id: "78"
+      spider-x: "/"
+  
+  - name: "北马其顿01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 20131
+    uuid: 73692b69-2682-4ade-ad71-341fc112327d
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "ig-Eyq9mL23CS0xKyQBqHPuGOqOYndTRBnKa_zIabmQ"
+      short-id: "1984ad1ae879bc"
+      spider-x: "/"
+
+  - name: "阿塞拜疆01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 20132
+    uuid: a57672fd-9ab6-4dbb-9454-bb6cd4996bfe
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "9w9qORdyTzgpDRVq8HOJ6rXXk0_G4Zhe1N4a_a9LtHg"
+      short-id: "faa4d7885a99"
+      spider-x: "/"
+
+  - name: "西班牙01"
+    type: vless
+    server: nl.jiangniao.de
+    port: 20101
+    uuid: accf664c-7f54-42d6-ac76-907e60290a8d
+    network: tcp
+    tls: true
+    udp: true
+    flow: "xtls-rprx-vision-udp443"
+    servername: "icloud.com"
+    client-fingerprint: chrome
+    reality-opts:
+      public-key: "4t1T0jQwwKyUpNiDivGhf3bNsIuTknvasPNPr_8SWzs"
+      short-id: "7208"
+      spider-x: "/"
+
 proxy-groups:
   - name: "Proxy"
     type: select
@@ -925,6 +1053,14 @@ proxy-groups:
       - "土耳其01"
       - "台湾01"
       - "瑞士01"
+      - "孟加拉01"
+      - "泰国01"
+      - "伊拉克01"
+      - "保加利亚01"
+      - "奥地利01"
+      - "北马其顿01"
+      - "阿塞拜疆01"
+      - "西班牙01"
 
 rules:
   - DOMAIN-SUFFIX,local,DIRECT
