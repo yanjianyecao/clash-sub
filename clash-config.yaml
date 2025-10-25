@@ -889,9 +889,9 @@ proxies:
 
   - name: "泰国01"
     type: vless
-    server: rfc.jiangniao.de
+    server: gomami.jiangniao.de
     port: 20121
-    uuid: a382f1d5-9673-4db0-a750-731c3ec41ebb
+    uuid: 14fab193-c568-48e0-9a2f-09e932f04476
     network: tcp
     tls: true
     udp: true
@@ -899,8 +899,8 @@ proxies:
     servername: "icloud.com"
     client-fingerprint: chrome
     reality-opts:
-      public-key: "Kf22wj7wYWLRVL91iEfPQ9OBrPuiHSJYriFvnIV4Ung"
-      short-id: "8ddd"
+      public-key: "hJvzbKGiAvYp1p4QxZMaT0wM0mJSOGmkVqWRIN7SdF4"
+      short-id: "f94aa925095b"
       spider-x: "/"
 
   - name: "伊拉克01"
